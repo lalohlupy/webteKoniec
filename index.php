@@ -7,7 +7,7 @@
 <html lang="sk">
 <head>
     <meta charset="utf-8">
-    <h1>martin je kokot</h1>
+    <h1>martin je frajer</h1>
     <title>Skuskove_zadanie</title>
     <meta name="description" content="Skuskove_zadanie">
     <meta name="author" content="SitePoint">
