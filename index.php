@@ -12,11 +12,11 @@
     <meta name="description" content="Skuskove_zadanie">
     <meta name="author" content="SitePoint">
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
 
 </head>
 
 <body>
-<script src="js/scripts.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
