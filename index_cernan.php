@@ -35,7 +35,8 @@
     </li>
 </ul>
 <button onclick="myFunction()">Add question</button>
-
+<button onclick="myFunction2()">get all questions</button>
+<button id="btn2">Show HTML</button>
 
 
 
@@ -45,11 +46,13 @@
     $("document").ready(function (){
         $("body").append("list");
     })
-
+    var index = 0;
 
 function myFunction() {
+    var idName = "question"
     var node = document.createElement("LI");                //pridaj list
-
+    node.setAttribute("id" , idName+index);
+    index++;
     var text = document.getElementById("testName").value;      //pridaj nazov
     var textnode = document.createTextNode(text);
     node.appendChild(textnode);
@@ -58,25 +61,39 @@ function myFunction() {
     var check1 = document.getElementById("multipleAnswers").checked;
     var check2 = document.getElementById("shortAnswer").checked;
     if(check1 == true){
-        text = "- multipleAnswers";
+        text = "- choose one from multiple answers";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }
     else if(check2 == true){
-        text = "- shortAnswer";
+        var textarea = document.createElement("textarea");
+        text = "- write short text answer";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }
     else {
-        text = "- pairAnswers";
+        text = "- pair answers together";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }
     //alert(text);
     document.getElementById("testList").appendChild(node);
+    document.getElementById("testList").appendChild(textarea);
 
 
-}
+};
+
+function myFunction2(){
+    $("#myDiv :input").hide(); // :input matches all input elements, including selects
+};
+
+$("#btn2").click(function(){
+    alert("HTML: " + $("#testList").html());
+});
+
+
+
+
 </script>
 
 </body>
