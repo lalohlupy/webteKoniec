@@ -3,30 +3,67 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="sk">
 <body>
 
-<ol id="testList">
-  <li>Coffee</li>
-  <li>Tea</li>
-</ol>
+<ol id="testList"></ol>
 
 
 <label for="testName">Test name:</label>
-<input type="text" id="testName" name="testName"><br><br>
-<button onclick="myFunction()">Try it</button>
+<textarea id="testName" name="testName" rows="1" cols="25"></textarea>
+<ul>
+    <li>
+        <input type="radio" id="multipleAnswers" name="testType" value="multipleAnswers">
+        <label for="multipleAnswers">multipleAnswers</label><br>
+    </li>
+    <li>
+        <input type="radio" id="shortAnswer" name="testType" value="shortAnswer">
+        <label for="shortAnswer">shortAnswer</label><br>
+    </li>
+    <li>
+        <input type="radio" id="pairAnswers" name="testType" value="pairAnswers">
+        <label for="pairAnswers">pairAnswers</label>
+    </li>
+</ul>
+<button onclick="myFunction()">Add question</button>
+
+
+
+
+
 
 <script>
 function myFunction() {
-    var node = document.createElement("LI");
-    var text = document.getElementById("testName");
-    //var textnode = document.createTextNode("Water");
-    node.appendChild(text);
+    var node = document.createElement("LI");                //pridaj list
+
+    var text = document.getElementById("testName").value;      //pridaj nazov
+    var textnode = document.createTextNode(text);
+    node.appendChild(textnode);
+
+
+    var check1 = document.getElementById("multipleAnswers").checked;
+    var check2 = document.getElementById("shortAnswer").checked;
+    if(check1 == true){
+        text = "- multipleAnswers";
+        textnode = document.createTextNode(text);
+        node.appendChild(textnode);
+    }
+    else if(check2 == true){
+        text = "- shortAnswer";
+        textnode = document.createTextNode(text);
+        node.appendChild(textnode);
+    }
+    else {
+        text = "- pairAnswers";
+        textnode = document.createTextNode(text);
+        node.appendChild(textnode);
+    }
+    //alert(text);
     document.getElementById("testList").appendChild(node);
+
+
 }
 </script>
-
-<p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
 
 </body>
 </html>
