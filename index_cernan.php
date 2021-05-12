@@ -4,6 +4,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <title>Vytvaranie testov</title>
+    <meta name="description" content="Skuskove_zadanie">
+    <meta name="cernan" content="SitePoint">
+
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <script rel="script" src="js/jquery-3.6.0.min.js"></script>
+</head>
 <body>
 
 <ol id="testList"></ol>
@@ -33,6 +42,11 @@
 
 
 <script>
+    $("document").ready(function (){
+        $("body").append("list");
+    })
+
+
 function myFunction() {
     var node = document.createElement("LI");                //pridaj list
 
