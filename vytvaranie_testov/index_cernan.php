@@ -6,14 +6,15 @@
 <html lang="sk">
 <head>
     <meta charset="utf-8">
-    <title>Vytvaranie testov</title>
-    <meta name="description" content="Skuskove_zadanie">
-    <meta name="cernan" content="SitePoint">
-
     <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
+    <title>Vytvaranie testov</title>
 </head>
-<body>
+<body class="container">
 
 <ol id="testList"></ol>
 
