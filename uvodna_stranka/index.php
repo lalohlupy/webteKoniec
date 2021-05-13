@@ -15,6 +15,7 @@
 <body style="background-color: #aaaabb;">
     <div class="container">
         <div class="center">
+            <p>dsdsa</p>
             <h1>Prihlásiť sa ako: </h1>
             <a class="size_a" href="student.php">Študent</a>
             <a class="size_a" href="ucitel.php">Učiteľ</a>
