@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="WEBTECH2" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="WEBTECH2">
+      <paths name="webte">
         <serverdata>
           <mappings>
-            <mapping deploy="/Zaverecne_zadanie" local="$PROJECT_DIR$" web="/Zaverecne_zadanie" />
+            <mapping deploy="webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -19,23 +19,23 @@
 <ol id="testList"></ol>
 
 
-<label for="testName">Test name:</label>
+<label for="testName">Nazov testu:</label>
 <textarea id="testName" name="testName" rows="1" cols="25"></textarea>
 <ul>
     <li>
         <input type="radio" id="multipleAnswers" name="testType" value="multipleAnswers">
-        <label for="multipleAnswers">multipleAnswers</label><br>
+        <label for="multipleAnswers">vyber z moznosti</label><br>
     </li>
     <li>
         <input type="radio" id="shortAnswer" name="testType" value="shortAnswer">
-        <label for="shortAnswer">shortAnswer</label><br>
+        <label for="shortAnswer">kratka slovna odpoved</label><br>
     </li>
     <li>
         <input type="radio" id="pairAnswers" name="testType" value="pairAnswers">
-        <label for="pairAnswers">pairAnswers</label>
+        <label for="pairAnswers">parovanie otazok</label>
     </li>
 </ul>
-<button onclick="myFunction()">Add question</button>
+<button onclick="myFunction()">Pridat otazku</button>
 <button onclick="myFunction2()">get all questions</button>
 <button id="btn2">Show HTML</button>
 
@@ -44,9 +44,9 @@
 
 
 <script>
-    $("document").ready(function (){
+    /*$("document").ready(function (){
         $("body").append("list");
-    })
+    })*/
     var index = 0;
 
 function myFunction() {
@@ -62,18 +62,18 @@ function myFunction() {
     var check1 = document.getElementById("multipleAnswers").checked;
     var check2 = document.getElementById("shortAnswer").checked;
     if(check1 == true){
-        text = "- choose one from multiple answers";
+        text = "- vyber z moznosti";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }
     else if(check2 == true){
         var textarea = document.createElement("textarea");
-        text = "- write short text answer";
+        text = "- kratka slovna odpoved";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }
     else {
-        text = "- pair answers together";
+        text = "- parovanie otazok";
         textnode = document.createTextNode(text);
         node.appendChild(textnode);
     }

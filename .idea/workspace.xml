@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b29bc8-a1b5-4ee1-9dd3-177dce3f7c53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_cernan.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,6 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\vytvaranie_testov" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\uvodna_stranka" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\prihlasenie" />
     </key>
@@ -61,7 +59,7 @@
       <workItem from="1620740795271" duration="3371000" />
       <workItem from="1620818402382" duration="7837000" />
       <workItem from="1620829729797" duration="10824000" />
-      <workItem from="1620897035993" duration="1819000" />
+      <workItem from="1620897035993" duration="1177000" />
     </task>
     <task id="LOCAL-00001" summary="boaaa">
       <created>1620741079790</created>
@@ -98,21 +96,7 @@
       <option name="project" value="LOCAL" />
       <updated>1620898971554</updated>
     </task>
-    <task id="LOCAL-00006" summary="cernan">
-      <created>1620899443507</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1620899443507</updated>
-    </task>
-    <task id="LOCAL-00007" summary="cernan2">
-      <created>1620899512170</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1620899512170</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,8 +105,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="boaaa" />
     <MESSAGE value="login system" />
-    <MESSAGE value="cernan" />
-    <MESSAGE value="cernan2" />
-    <option name="LAST_COMMIT_MESSAGE" value="cernan2" />
+    <option name="LAST_COMMIT_MESSAGE" value="login system" />
   </component>
 </project>
