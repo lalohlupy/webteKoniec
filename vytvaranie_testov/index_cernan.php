@@ -23,9 +23,9 @@
 </div>
 <label for="testName">Nazov testu:</label>
 <textarea id="testName" name="testName" rows="1" cols="25"></textarea>
-<ul>
+<ul onchange="show_hide()">
     <li>
-        <input type="radio" id="multipleAnswers" name="testType" value="multipleAnswers">
+        <input type="radio" id="multipleAnswers" onclick="newButton()" name="testType" value="multipleAnswers">
         <label for="multipleAnswers">vyber z moznosti</label><br>
     </li>
     <li>
@@ -41,9 +41,7 @@
 <button onclick="myFunction2()">get all questions</button>
 <button id="btn2">Show HTML</button>
 
-<div id="testDiv">
 
-</div>
 
 
 
@@ -94,6 +92,9 @@ function myFunction() {
         document.getElementById(divId).appendChild(node);
         document.getElementById(divId).appendChild(textarea);
     }
+    //alert(text);
+    document.getElementById("testList").appendChild(node);
+    document.getElementById("testList").appendChild(textarea);
 
 
 

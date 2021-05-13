@@ -1,525 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.1.5">
-      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/testsIO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/docs/Refactor notes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/docs/temp to do.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_AMS-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Caligraphic-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Caligraphic-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Fraktur-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Fraktur-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Main-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Main-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Main-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Math-BoldItalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Math-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Math-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_SansSerif-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_SansSerif-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_SansSerif-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Script-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Size1-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Size2-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Size3-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Size4-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_Typewriter-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/eot/MathJax_WinIE6-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/font.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_AMS-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Caligraphic-Bold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Caligraphic-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Fraktur-Bold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Fraktur-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Main-Bold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Main-Italic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Main-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Math-BoldItalic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Math-Italic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Math-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_SansSerif-Bold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_SansSerif-Italic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_SansSerif-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Script-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Size1-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Size2-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Size3-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Size4-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_Typewriter-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_WinChrome-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/otf/MathJax_WinIE6-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_AMS-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Caligraphic-Bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Caligraphic-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Fraktur-Bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Fraktur-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Main-Bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Main-Italic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Main-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Math-BoldItalic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Math-Italic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Math-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_SansSerif-Bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_SansSerif-Italic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_SansSerif-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Script-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Size1-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Size2-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Size3-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Size4-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_Typewriter-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/svg/MathJax_WinChrome-Regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_AMS-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Caligraphic-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Caligraphic-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Fraktur-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Fraktur-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Main-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Main-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Main-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Math-BoldItalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Math-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Math-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_SansSerif-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_SansSerif-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_SansSerif-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Script-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Size1-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Size2-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Size3-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Size4-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Fonts/TeX/woff/MathJax_Typewriter-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigCapOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigCupOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigSqCapOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigSqCupOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigVeeOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/bigWedgeOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/coProdOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/iiint.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/iint.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/int.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/oiiint.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/oiint.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/oint.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/prodOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/radical.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/radicalDiagonalLine.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/Images/sumOperator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/absBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/angleBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/barAccent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCapInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCapNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCapNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCapNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCapSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCupInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCupNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCupNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCupNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigCupSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCapInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCapNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCapNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCapNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCapSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCupInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCupNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCupNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCupNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigSqCupSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVeeInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVeeNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVeeNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVeeNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigVeeSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedgeInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedgeNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedgeNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedgeNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/bigWedgeSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/ceilBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProdInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProdNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProdNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProdNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/coProdSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/contourIntegralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/curlyBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/dotAccent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleContourIntegralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/doubleIntegralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/floorBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/hatAccent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/integralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/limit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/log_n.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/maxLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/minLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/normBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/nthRoot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/parenthesesBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prod.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prodInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prodNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prodNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prodNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/prodSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/squareBracketPair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/squareRoot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/stackedFraction.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/subscript.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sumInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sumNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sumNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sumNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/sumSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/superscript.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/superscriptAndSubscript.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleContourIntegralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegralInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegralNoUpper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegralNoUpperInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegralNoUpperNoLower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/tripleIntegralSymbol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/png/vectorAccent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/absBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/angleBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/barAccent.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCap.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCapInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCapNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCapNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCapNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCapSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCup.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCupInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCupNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCupNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCupNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigCupSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCap.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCapInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCapNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCapNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCapNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCapSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCup.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCupInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCupNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCupNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCupNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigSqCupSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVee.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVeeInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVeeNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVeeNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVeeNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigVeeSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedge.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedgeInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedgeNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedgeNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedgeNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/bigWedgeSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/ceilBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProd.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProdInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProdNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProdNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProdNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/coProdSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/contourIntegralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/curlyBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/dotAccent.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleContourIntegralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/doubleIntegralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/floorBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/hatAccent.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/integralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/limit.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/log_n.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/maxLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/minLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/normBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/nthRoot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/parenthesesBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prod.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prodInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prodNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prodNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prodNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/prodSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/squareBracketPair.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/squareRoot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/stackedFraction.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/subscript.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sum.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sumInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sumNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sumNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sumNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/sumSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/superscript.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/superscriptAndSubscript.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleContourIntegralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegral.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegralInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegralNoUpper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegralNoUpperInline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegralNoUpperNoLower.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/tripleIntegralSymbol.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/MenuImages/svg/vectorAccent.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/css/equationEditor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/html/EquationEditor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/html/InlineEditor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/html/MinimalEquationEditor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/addWrapperUtil.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/blinkingCursor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/clipboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/accentContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/bigOperatorLowerLimitContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/bigOperatorOperandContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/bigOperatorUpperLimitContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/bracketContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/container.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/functionLowerContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/integralLowerLimitContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/integralUpperLimitContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/limitLeftContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/limitRightContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/logLowerContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/matrixContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/nthRootDegreeContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/nthRootRadicandContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/squareEmptyContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/squareRootRadicandContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/stackedFractionDenominatorContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/stackedFractionNumeratorContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/subscriptContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/superscriptContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/containers/topLevelContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/dom/containerDom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/dom/equationDom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/dom/wrapperDom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/accentSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigCapBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigCupBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigSqCapBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigSqCupBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigVeeBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bigWedgeBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/boundEquationComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/bracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/coProdBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/contourDoubleIntegralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/contourIntegralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/contourTripleIntegralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/doubleIntegralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/equationComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/functionLowerWord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/functionWord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/integralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftAbsValBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftAbsValMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftAbsValWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftAngleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftAngleWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCeilBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCeilMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCeilTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCeilWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCurlyBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCurlyBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCurlyMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCurlyTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftCurlyWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftFloorBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftFloorBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftFloorMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftFloorWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftNormBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftNormMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftNormWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftParenthesisBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftParenthesisBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftParenthesisMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftParenthesisTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftParenthesisWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftSquareBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftSquareBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftSquareMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftSquareTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/leftSquareWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/limitSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/limitWord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/logLowerWord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/middleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/nthRootDiagonal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/nthRootOverBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/nthRootRadical.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/prodBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightAbsValBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightAbsValMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightAbsValWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightAngleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightAngleWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCeilBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCeilMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCeilTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCeilWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCurlyBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCurlyBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCurlyMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCurlyTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightCurlyWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightFloorBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightFloorBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightFloorMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightFloorWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightNormBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightNormMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightNormWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightParenthesisBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightParenthesisBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightParenthesisMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightParenthesisTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightParenthesisWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightSquareBottomBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightSquareBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightSquareMiddleBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightSquareTopBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/rightSquareWholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/squareRootDiagonal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/squareRootOverBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/squareRootRadical.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/stackedFractionHorizontalBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/sumBigOperatorSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/symbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/topBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/topLevelEmptyContainerMessage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/tripleIntegralSymbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/wholeBracket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/misc/word.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/accentWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/bigOperatorWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/bracketPairWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/bracketWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/emptyContainerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/functionLowerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/functionWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/integralWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/limitWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/logLowerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/matrixWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/nthRootWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/operatorWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/squareEmptyContainerFillerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/squareEmptyContainerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/squareRootWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/stackedFractionWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/subscriptWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/superscriptAndSubscriptWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/superscriptWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/symbolWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/topLevelEmptyContainerWrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation-components/wrappers/wrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/equationEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/fontMetrics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/inlineEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/keyboardInteraction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/latexGenerator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/menuInteraction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/mouseInteraction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/app/js/property.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/lib/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/lib/jquery-2.0.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/lib/mousetrap-1.4.6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/lib/spin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/src/lib/underscore-1.6.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/TestRunner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/lib/qunit-1.14.0.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/lib/qunit-1.14.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/lib/sinon-1.9.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/tests/containerTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/tests/initTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/tests/propertyRepoTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/equation-editor-master/equation-editor-master/test/tests/propertyTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
+    <list default="true" id="47b29bc8-a1b5-4ee1-9dd3-177dce3f7c53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_cernan.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -528,6 +11,16 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -564,6 +57,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\vytvaranie_testov" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\uvodna_stranka" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\prihlasenie" />
     </key>
@@ -579,7 +73,7 @@
       <workItem from="1620740795271" duration="3371000" />
       <workItem from="1620818402382" duration="7837000" />
       <workItem from="1620829729797" duration="10824000" />
-      <workItem from="1620897035993" duration="1177000" />
+      <workItem from="1620897035993" duration="1819000" />
     </task>
     <task id="LOCAL-00001" summary="boaaa">
       <created>1620741079790</created>
@@ -616,14 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620898971554</updated>
     </task>
-    <task id="LOCAL-00006" summary="1.1.5">
-      <created>1620900365062</created>
+    <task id="LOCAL-00006" summary="cernan">
+      <created>1620899443507</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1620900365062</updated>
+      <updated>1620899443507</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cernan2">
+      <created>1620899512170</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620899512170</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="boaaa" />
     <MESSAGE value="login system" />
-    <MESSAGE value="1.1.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1.5" />
+    <MESSAGE value="cernan" />
+    <MESSAGE value="cernan2" />
+    <option name="LAST_COMMIT_MESSAGE" value="cernan2" />
   </component>
 </project>
