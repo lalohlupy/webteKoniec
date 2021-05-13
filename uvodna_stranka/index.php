@@ -14,6 +14,7 @@
 </head>
 <body style="background-color: #aaaabb;">
     <div class="container">
+        <p>ides</p>
         <div class="center">
             <h1>Prihlásiť sa ako: </h1>
             <a class="size_a" href="student.php">Študent</a>
