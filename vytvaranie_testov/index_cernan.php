@@ -10,8 +10,8 @@
     <meta name="description" content="Skuskove_zadanie">
     <meta name="cernan" content="SitePoint">
 
-    <link rel="stylesheet" href="css/style.css?v=1.0">
-    <script rel="script" src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
