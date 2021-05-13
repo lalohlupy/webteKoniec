@@ -1,0 +1,127 @@
+Index: index_cernan.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n\r\n?>\r\n<!DOCTYPE html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <title>Vytvaranie testov</title>\r\n    <meta name=\"description\" content=\"Skuskove_zadanie\">\r\n    <meta name=\"cernan\" content=\"SitePoint\">\r\n\r\n    <link rel=\"stylesheet\" href=\"css/style.css?v=1.0\">\r\n    <script rel=\"script\" src=\"js/jquery-3.6.0.min.js\"></script>\r\n</head>\r\n<body>\r\n\r\n<ol id=\"testList\"></ol>\r\n\r\n\r\n<label for=\"testName\">Test name:</label>\r\n<textarea id=\"testName\" name=\"testName\" rows=\"1\" cols=\"25\"></textarea>\r\n<ul>\r\n    <li>\r\n        <input type=\"radio\" id=\"multipleAnswers\" name=\"testType\" value=\"multipleAnswers\">\r\n        <label for=\"multipleAnswers\">multipleAnswers</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"shortAnswer\" name=\"testType\" value=\"shortAnswer\">\r\n        <label for=\"shortAnswer\">shortAnswer</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"pairAnswers\" name=\"testType\" value=\"pairAnswers\">\r\n        <label for=\"pairAnswers\">pairAnswers</label>\r\n    </li>\r\n</ul>\r\n<button onclick=\"myFunction()\">Add question</button>\r\n<button onclick=\"myFunction2()\">get all questions</button>\r\n<button id=\"btn2\">Show HTML</button>\r\n\r\n\r\n\r\n\r\n\r\n<script>\r\n    $(\"document\").ready(function (){\r\n        $(\"body\").append(\"list\");\r\n    })\r\n    var index = 0;\r\n\r\nfunction myFunction() {\r\n    var idName = \"question\"\r\n    var node = document.createElement(\"LI\");                //pridaj list\r\n    node.setAttribute(\"id\" , idName+index);\r\n    index++;\r\n    var text = document.getElementById(\"testName\").value;      //pridaj nazov\r\n    var textnode = document.createTextNode(text);\r\n    node.appendChild(textnode);\r\n\r\n\r\n    var check1 = document.getElementById(\"multipleAnswers\").checked;\r\n    var check2 = document.getElementById(\"shortAnswer\").checked;\r\n    if(check1 == true){\r\n        text = \"- choose one from multiple answers\";\r\n        textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n    }\r\n    else if(check2 == true){\r\n        var textarea = document.createElement(\"textarea\");\r\n        text = \"- write short text answer\";\r\n        textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n    }\r\n    else {\r\n        text = \"- pair answers together\";\r\n        textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n    }\r\n    //alert(text);\r\n    document.getElementById(\"testList\").appendChild(node);\r\n    document.getElementById(\"testList\").appendChild(textarea);\r\n\r\n\r\n};\r\n\r\nfunction myFunction2(){\r\n    $(\"#myDiv :input\").hide(); // :input matches all input elements, including selects\r\n};\r\n\r\n$(\"#btn2\").click(function(){\r\n    alert(\"HTML: \" + $(\"#testList\").html());\r\n});\r\n\r\n\r\n\r\n\r\n</script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index_cernan.php b/index_cernan.php
+--- a/index_cernan.php	(revision 64352fb371b22ffb457cd2123a3f03cebc8e06dd)
++++ b/index_cernan.php	(date 1620899031078)
+@@ -14,81 +14,102 @@
+     <script rel="script" src="js/jquery-3.6.0.min.js"></script>
+ </head>
+ <body>
+-
+-<ol id="testList"></ol>
++<div id="myDiv">
++    <ol id="testList"></ol>
++</div>
+ 
+ 
+-<label for="testName">Test name:</label>
++
++<label for="testName">Question :</label>
+ <textarea id="testName" name="testName" rows="1" cols="25"></textarea>
+ <ul>
+     <li>
+         <input type="radio" id="multipleAnswers" name="testType" value="multipleAnswers">
+-        <label for="multipleAnswers">multipleAnswers</label><br>
++        <label for="multipleAnswers">vyber z moznosti</label><br>
+     </li>
+     <li>
+         <input type="radio" id="shortAnswer" name="testType" value="shortAnswer">
+-        <label for="shortAnswer">shortAnswer</label><br>
++        <label for="shortAnswer">napisanie odpovede</label><br>
+     </li>
+     <li>
+         <input type="radio" id="pairAnswers" name="testType" value="pairAnswers">
+-        <label for="pairAnswers">pairAnswers</label>
++        <label for="pairAnswers">parovanie otazok</label>
+     </li>
+ </ul>
+-<button onclick="myFunction()">Add question</button>
++<button onclick="myFunction()">Vlozit otazku</button>
+ <button onclick="myFunction2()">get all questions</button>
+-<button id="btn2">Show HTML</button>
++<button id="btn2">Ukazat HTML</button>
+ 
+ 
+ 
+ 
+ 
+ <script>
+-    $("document").ready(function (){
++    /*$("document").ready(function (){
+         $("body").append("list");
+-    })
+-    var index = 0;
++    })*/
++    var index = 1;
+ 
+ function myFunction() {
+     var idName = "question"
+     var node = document.createElement("LI");                //pridaj list
+     node.setAttribute("id" , idName+index);
+-    index++;
++
+     var text = document.getElementById("testName").value;      //pridaj nazov
+     var textnode = document.createTextNode(text);
++    var breakLine = document.createElement("br");
+     node.appendChild(textnode);
+ 
+ 
++
+     var check1 = document.getElementById("multipleAnswers").checked;
+     var check2 = document.getElementById("shortAnswer").checked;
+     if(check1 == true){
+         text = "- choose one from multiple answers";
+         textnode = document.createTextNode(text);
+         node.appendChild(textnode);
++        node.appendChild(breakLine);
+     }
+     else if(check2 == true){
+         var textarea = document.createElement("textarea");
++        textarea.setAttribute("id" , "textArea"+index);
+         text = "- write short text answer";
+         textnode = document.createTextNode(text);
+         node.appendChild(textnode);
++        node.appendChild(breakLine);
+     }
+     else {
+         text = "- pair answers together";
+         textnode = document.createTextNode(text);
+         node.appendChild(textnode);
++        node.appendChild(breakLine);
++
+     }
+     //alert(text);
+     document.getElementById("testList").appendChild(node);
+-    document.getElementById("testList").appendChild(textarea);
++    if(check2 == true) {document.getElementById(idName+index).appendChild(textarea);}
+ 
++
++    index++;
+ 
+ };
+ 
+ function myFunction2(){
+-    $("#myDiv :input").hide(); // :input matches all input elements, including selects
++    var input;
++    $("#myDiv :input").each(function (){
++        input = $(this);
++        }); // :input matches all input elements, including selects
++    $(input).each(function (){
++        alert(input.val());
++    })
++
+ };
+ 
+ $("#btn2").click(function(){
+     alert("HTML: " + $("#testList").html());
++
++
++    var text = $('textarea#mytextarea').val();
+ });
+ 
+ 
