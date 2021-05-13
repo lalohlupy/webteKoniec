@@ -1,0 +1,19 @@
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n?>\r\n\r\n<!doctype html>\r\n\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <h1>martin je frajer</h1>\r\n    <title>Skuskove_zadanie</title>\r\n    <meta name=\"description\" content=\"Skuskove_zadanie\">\r\n    <meta name=\"author\" content=\"SitePoint\">\r\n\r\n    <link rel=\"stylesheet\" href=\"css/style.css?v=1.0\">\r\n\r\n</head>\r\n\r\n<body>\r\n<script src=\"js/script.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.php b/index.php
+--- a/index.php	(revision 63d7d67a7ca4be5f0b12aa9e231e4c146c45619a)
++++ b/index.php	(date 1620740746790)
+@@ -7,7 +7,7 @@
+ <html lang="sk">
+ <head>
+     <meta charset="utf-8">
+-    <h1>martin je frajer</h1>
++    <h1>Zadanie</h1>
+     <title>Skuskove_zadanie</title>
+     <meta name="description" content="Skuskove_zadanie">
+     <meta name="author" content="SitePoint">

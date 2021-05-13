@@ -1,0 +1,13 @@
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-top: 10vw;
+}
+.size_a{
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+.size_a:hover{
+    color: blue;
+}
