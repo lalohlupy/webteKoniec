@@ -32,7 +32,7 @@
             </form>
 
             <?php
-                require_once 'config.php';
+                require_once '../config.php';
 
                 if(!empty($_POST['id'])){
                     if(is_numeric($_POST['id'])) {

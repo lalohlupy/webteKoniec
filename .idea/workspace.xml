@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="cernan2" />
+    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.1.6">
+      <change afterPath="$PROJECT_DIR$/js/tvorenieOtazok.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/pridavanie_otazok.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uvodna_stranka/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uvodna_stranka/registracia_ucitela.php" beforeDir="false" afterPath="$PROJECT_DIR$/uvodna_stranka/registracia_ucitela.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uvodna_stranka/ucitel.php" beforeDir="false" afterPath="$PROJECT_DIR$/uvodna_stranka/ucitel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/testsIO.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\PhpstormProjects\webteKoniec" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\vytvaranie_testov" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\uvodna_stranka" />
       <recent name="D:\Projekty\Webove_technologie_2\webteKoniec\prihlasenie" />
@@ -122,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620899512170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.1.6">
+      <created>1620919128594</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620919128594</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +166,7 @@
     <MESSAGE value="login system" />
     <MESSAGE value="cernan" />
     <MESSAGE value="cernan2" />
-    <option name="LAST_COMMIT_MESSAGE" value="cernan2" />
+    <MESSAGE value="1.1.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1.6" />
   </component>
 </project>

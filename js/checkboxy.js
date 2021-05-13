@@ -1,31 +1,32 @@
-var index = 0;
+var countM = 0;
 
 function show_hide(){
-    if (document.getElementById("multipleAnswers").checked) {
+    if (document.getElementById("multipleAnswersC").checked) {
         document.getElementById("myDiv").style.display = "block";
+        document.getElementById("maC").style.display = "block";
     } else {
         document.getElementById("myDiv").style.display = "none";
         document.getElementById("myDiv").innerHTML = "";
-        index = 0;
+        countM = 0;
     }
 }
 
 function newCheckbox() {
     var id = "name";
-    var myDiv = document.getElementById("myDiv");
+    var maC = document.getElementById("maC");
     var checkbox = document.createElement('input');
     var label = document.createElement('label');
     var text =  document.getElementById("odpoved").value;
 
     checkbox.type = "checkbox";
-    checkbox.id = id + index;
+    checkbox.id = id + countM;
 
-    label.htmlFor = id + index;
+    label.htmlFor = id + countM;
     label.appendChild(document.createTextNode(text));
 
-    myDiv.appendChild(checkbox);
-    myDiv.appendChild(label);
-    index++;
+    maC.appendChild(checkbox);
+    maC.appendChild(label);
+    countM++;
 }
 function newButton(){
     if(!document.getElementById("pridaj_checkbox")) {

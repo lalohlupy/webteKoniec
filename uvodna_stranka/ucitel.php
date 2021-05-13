@@ -26,7 +26,7 @@
             </form>
             <a class="size_a" href="registracia_ucitela.php">Registrovať</a>
             <?php
-                require_once 'config.php';
+                require_once '../config.php';
 
                 if(!empty($_POST['id_ucitel']) && !empty($_POST['heslo_ucitel'])){
                     $login = $_POST['id_ucitel'];
