@@ -1,17 +1,21 @@
 <?php
-require_once "config.php";
+require_once "../vytvaranie_testov/config.php";
+require_once "../vytvaranie_testov/functions.php";
 session_start();
 
-$indexC = 'aDsT2$b';
-$keyC = password_hash($indexC, PASSWORD_DEFAULT);
-$sql = $conn->prepare("CREATE TABLE '$keyC' (
+//usage
+$myRandomString = generateRandomString(8);
+
+$sql = $conn->prepare("CREATE TABLE $myRandomString (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    test_code VARCHAR(64) NOT NULL,
-    
-)");
-$sql->execute();
+    test_code VARCHAR(64) NOT NULL
+    )");
+$temp = $sql->execute();
+//echo $keyC;
+//echo " xxx ".$bytes;
 //test_name VARCHAR(30) NOT NULL,
-$_SESSION['key'] = $keyC;
+$_SESSION['key'] = $myRandomString;
+var_dump($_POST);
 
 ?>
 <!DOCTYPE html>

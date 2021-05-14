@@ -17,6 +17,7 @@ function newCheckbox() {
     var checkbox = document.createElement('input');
     var label = document.createElement('label');
     var text =  document.getElementById("odpoved").value;
+    var bututu = document.createElement("button");
 
     checkbox.type = "checkbox";
     checkbox.id = id + countM;

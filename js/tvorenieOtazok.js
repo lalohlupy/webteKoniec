@@ -22,7 +22,7 @@ function myFunction() {
         var check2 = document.getElementById("shortAnswerC").checked;
         if(check1 == true){
             var temp = $("#maC").html();
-            alert(temp);
+            //alert(temp);
             text = "- vyber z moznosti";
             textnode = document.createTextNode(text);
             node.appendChild(textnode);
@@ -51,7 +51,7 @@ function myFunction() {
         var jsonObject = $(tempId).html();
         $.ajax({
             type : "POST",
-            url : "testsIO.php",
+            url : "index_cernan.php",
             dataType : 'text',
             data : {
                 json : jsonObject

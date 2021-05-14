@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.1.6">
-      <change afterPath="$PROJECT_DIR$/js/tvorenieOtazok.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/pridavanie_otazok.php" afterDir="false" />
+    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.0">
+      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a07b346f-3849-4468-b550-8429c75531b4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a07b346f-3849-4468-b550-8429c75531b4/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uvodna_stranka/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uvodna_stranka/registracia_ucitela.php" beforeDir="false" afterPath="$PROJECT_DIR$/uvodna_stranka/registracia_ucitela.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uvodna_stranka/ucitel.php" beforeDir="false" afterPath="$PROJECT_DIR$/uvodna_stranka/ucitel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tvorenieOtazok.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tvorenieOtazok.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/testsIO.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zadanie2/classes/PersonController.php" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,7 +75,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="47b29bc8-a1b5-4ee1-9dd3-177dce3f7c53" name="Default Changelist" comment="" />
+      <changelist id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.0" />
       <created>1620740793206</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -86,6 +84,7 @@
       <workItem from="1620818402382" duration="7837000" />
       <workItem from="1620829729797" duration="10824000" />
       <workItem from="1620897035993" duration="1819000" />
+      <workItem from="1620984005427" duration="8289000" />
     </task>
     <task id="LOCAL-00001" summary="boaaa">
       <created>1620741079790</created>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620919128594</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1.2.0">
+      <created>1620935110462</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1620935110462</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +173,7 @@
     <MESSAGE value="cernan" />
     <MESSAGE value="cernan2" />
     <MESSAGE value="1.1.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1.6" />
+    <MESSAGE value="1.2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.2.0" />
   </component>
 </project>
