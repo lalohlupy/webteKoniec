@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.0">
-      <change afterPath="$PROJECT_DIR$/vytvaranie_testov/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a07b346f-3849-4468-b550-8429c75531b4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a07b346f-3849-4468-b550-8429c75531b4/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/tvorenieOtazok.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tvorenieOtazok.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
