@@ -1,19 +1,15 @@
 <?php
-//require_once "config.php";
-//require_once "functions.php";
-//session_start();
-//
-////usage
-//$myRandomString = generateRandomString(8);
-//
-//$sql = $conn->prepare("CREATE TABLE $myRandomString (
-//    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-//    test_code VARCHAR(64) NOT NULL
-//    )");
-//$temp = $sql->execute();
-////echo $keyC;
-////echo " xxx ".$bytes;
-////test_name VARCHAR(30) NOT NULL,
+require_once "functions.php";
+require_once "Controller.php";
+session_start();
+
+
+$myRandomString = generateRandomString(8);
+$controller = new Controller();
+//echo $myRandomString;
+$controller->createTable($myRandomString);
+
+//test_name VARCHAR(30) NOT NULL,
 //$_SESSION['key'] = $myRandomString;
 //var_dump($_POST);
 
@@ -58,8 +54,9 @@
 <button onclick="myFunction()">Pridat otazku</button>
 <button onclick="myFunction2()">get all questions</button>
 <!-- <button id="btn2">Show HTML</button>  -->
-
 <div id="maC"></div>
+<div id="madivC"></div>
+
 
 </body>
 </html>
