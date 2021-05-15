@@ -14,7 +14,7 @@
 </head>
 <body style="background-color: #aaaabb;">
 <div class="container">
-    <div class="center">
+    <div class="center" style="background-color: whitesmoke; margin-top: 200px; border-radius: 15px; width: 50%; margin-left: 300px; border: solid 2px">
         <form method="post">
             <label for="kluc">Zadajte klúč:</label><br>
             <input type="text" id="kluc" name="kluc" required><br>
@@ -39,9 +39,7 @@
     if(!empty($_POST['kluc']) && !empty($_POST['meno_student']) && !empty($_POST['priezvisko_student'])
         && !empty($_POST['id_student']))
     {
-//        header("Location: qrLogin.php");
-
-
+        header("Location: /pohlad_student/index.php");
     }
 ?>
 
