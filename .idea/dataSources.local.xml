@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="PS-211.7036.8">
+  <component name="dataSourceStorageLocal" created-in="PS-211.7142.44">
     <data-source name="@localhost" uuid="2f59978a-ef73-4cd0-9b1e-e3d8025e025a">
       <database-info product="MySQL" version="8.0.23-0ubuntu0.20.04.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="8.0.23" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
@@ -16,7 +16,7 @@
       </schema-mapping>
       <ssh-properties>
         <enabled>true</enabled>
-        <ssh-config-id>644ffb7e-d788-4913-9dcd-c7430c204dfb</ssh-config-id>
+        <ssh-config-id>13f83400-2af1-4304-957a-79bfd27a2dbe</ssh-config-id>
       </ssh-properties>
     </data-source>
   </component>

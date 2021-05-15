@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Prihlasenie</title>
 </head>
-<body style="background-color: #aaaabb;">
+<body style="background-color: #d051de;">
     <div class="container">
         <div class="center">
             <h1>Prihlásiť sa ako: </h1>
