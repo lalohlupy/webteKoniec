@@ -27,11 +27,8 @@
                         <a href="#" class="nav-link">Drawing Tool</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">Scan work</a>
+                        <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/scan_work.php" class="nav-link">Scan work</a>
                     </li>
-<!--                    <li class="nav-item active">-->
-<!--                        <a href="#" class="nav-link">Submit Exam</a>-->
-<!--                    </li>-->
                     <li class="nav-item active">
                         <span class="nav-link">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>
                     </li>
