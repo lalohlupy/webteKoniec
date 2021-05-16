@@ -39,7 +39,11 @@
     if(!empty($_POST['kluc']) && !empty($_POST['meno_student']) && !empty($_POST['priezvisko_student'])
         && !empty($_POST['id_student']))
     {
-        header("Location: /pohlad_student/index.php");
+        if (isset($_POST['meno_student'])) {
+            session_start();
+            $_SESSION['meno_student'] = $_POST['meno_student'];
+        }
+        header("Location: ../pohlad_student/index.php");
     }
 ?>
 

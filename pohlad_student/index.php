@@ -44,9 +44,9 @@
                 </ul>
                 <div>
                     <span style="color: darkorange">LOGGED IN AS: <?php
-                        if (isset($_GET['meno_student'])) {
-                            $student = $_GET['meno_student'];
-                            echo "$student";
+                        session_start();
+                        if (isset($_SESSION['meno_student'])) {
+                            echo $_SESSION['meno_student'];
                         }
                         ?></span>
                 </div>
