@@ -25,7 +25,7 @@
     let i = 0;
     const intervalCallback = () => {
         i++;
-        $.get('http://147.175.98.50/webteKoniec/pohlad_student/rest.php', (data) => {
+        $.get('http://147.175.98.50/webteKoniec/pohlad_ucitel/rest.php', (data) => {
             const response = JSON.parse(data);
             $('#working').text(i + ' ' + response.map(student => student.name).join(', '));
         });
