@@ -24,7 +24,7 @@
                     <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/index.php" class="nav-link">Show Exam</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="#" class="nav-link">Formula Sheets</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/formula_sheets.php" class="nav-link">Formula Sheets</a>
                 </li>
                 <li class="nav-item active">
                     <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/drawing_tool.php" class="nav-link">Drawing Tool</a>
