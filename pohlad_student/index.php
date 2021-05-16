@@ -53,42 +53,42 @@
             </div>
         </div>
     </nav>
+    <div id="prehladTestov" class="border border-primary border-2 rounded-3 w-75" style="margin-top: 10vh; margin-left: 13%; padding: 30px">
+        <div class="container ">
+            <form class="align-items-center" >
+                <div style="margin-left: 30%">
+                    <div class="mb-3 w-50" id="testQuestionNum1"><!-- id na zaklade ktorych potom vlozim testove otazky -->
+                        <label for="testQuestionNum1" class="form-label">1. Question</label>
+                        <input type="text" class="form-control input-lg" id="testQuestionNum1" aria-describedby="testQuestion1">
+                        <div id="testQuestion1" class="form-text">Choose the correct answer.</div>
+                    </div>
+                    <div class="mb-3 w-50" id="testQuestionNum2"><!-- id na zaklade ktorych potom vlozim testove otazky -->
+                        <label for="testQuestionNum2" class="form-label">2. Question</label>
+                        <input type="text" class="form-control input-lg" id="testQuestionNum2" aria-describedby="testQuestion2">
+                        <div id="testQuestion2" class="form-text">Choose the correct answer.</div>
+                    </div>
+                    <div class="mb-3 w-50" id="testQuestionNum3"><!-- id na zaklade ktorych potom vlozim testove otazky -->
+                        <label for="testQuestionNum3" class="form-label">3. Question</label>
+                        <input type="text" class="form-control input-lg" id="testQuestionNum3" aria-describedby="testQuestion3">
+                        <div id="testQuestion3" class="form-text">Choose the correct answer.</div>
+                    </div>
+                    <div class="mb-3 w-50" id="testQuestionNum4"><!-- id na zaklade ktorych potom vlozim testove otazky -->
+                        <label for="testQuestionNum4" class="form-label">4. Question</label>
+                        <input type="text" class="form-control input-lg" id="testQuestionNum4" aria-describedby="testQuestion4">
+                        <div id="testQuestion4" class="form-text">Choose the correct answer.</div>
+                    </div>
+                    <div class="mb-3 w-50" id="testQuestionNum5"><!-- id na zaklade ktorych potom vlozim testove otazky -->
+                        <label for="testQuestionNum5" class="form-label">5. Question</label>
+                        <input type="text" class="form-control input-lg" id="testQuestionNum5" aria-describedby="testQuestion5">
+                        <div id="testQuestion5" class="form-text">Choose the correct answer.</div>
+                    </div>
+                </div>
+                <div class="text-center" style="padding: 25px">
+                    <button type="submit" class="btn btn-primary ">Submit Your Exam</button>
+                </div>
+            </form>
+        </div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
-<div id="prehladTestov" class="border border-primary border-2 rounded-3 w-75" style="margin-top: 10vh; margin-left: 13%; padding: 30px">
-    <div class="container ">
-        <form class="align-items-center" >
-            <div style="margin-left: 30%">
-            <div class="mb-3 w-50" id="testQuestionNum1"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                <label for="testQuestionNum1" class="form-label">1. Question</label>
-                <input type="text" class="form-control input-lg" id="testQuestionNum1" aria-describedby="testQuestion1">
-                <div id="testQuestion1" class="form-text">Choose the correct answer.</div>
-            </div>
-            <div class="mb-3 w-50" id="testQuestionNum2"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                <label for="testQuestionNum2" class="form-label">2. Question</label>
-                <input type="text" class="form-control input-lg" id="testQuestionNum2" aria-describedby="testQuestion2">
-                <div id="testQuestion2" class="form-text">Choose the correct answer.</div>
-            </div>
-            <div class="mb-3 w-50" id="testQuestionNum3"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                <label for="testQuestionNum3" class="form-label">3. Question</label>
-                <input type="text" class="form-control input-lg" id="testQuestionNum3" aria-describedby="testQuestion3">
-                <div id="testQuestion3" class="form-text">Choose the correct answer.</div>
-            </div>
-            <div class="mb-3 w-50" id="testQuestionNum4"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                <label for="testQuestionNum4" class="form-label">4. Question</label>
-                <input type="text" class="form-control input-lg" id="testQuestionNum4" aria-describedby="testQuestion4">
-                <div id="testQuestion4" class="form-text">Choose the correct answer.</div>
-            </div>
-            <div class="mb-3 w-50" id="testQuestionNum5"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                <label for="testQuestionNum5" class="form-label">5. Question</label>
-                <input type="text" class="form-control input-lg" id="testQuestionNum5" aria-describedby="testQuestion5">
-                <div id="testQuestion5" class="form-text">Choose the correct answer.</div>
-            </div>
-            </div>
-            <div class="text-center" style="padding: 25px">
-                <button type="submit" class="btn btn-primary ">Submit Your Exam</button>
-            </div>
-        </form>
-    </div>
-</div>
 </html>

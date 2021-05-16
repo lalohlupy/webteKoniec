@@ -56,8 +56,6 @@
         </div>
     </div>
 </nav>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
 <div class="container" style="margin-top: 15vh;">
     <div id="span1" style="padding: 20px">
         <span id="1" >
@@ -84,4 +82,6 @@
         <img style="margin-top: -5%" src="https://www.pngkit.com/png/full/202-2026598_internet-connection-icon-png-internet-access-icon.png" class="img-thumbnail" width="15%" height="15%" alt="internetConn">
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
 </html>
