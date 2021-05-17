@@ -2,14 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    /*padding-top: 10vw;*/
     margin: 20px;
     padding: 20px;
-}
-.size_a{
-    font-size: 1.5vw;
-    cursor: pointer;
-}
-.size_a:hover{
-    color: blue;
 }
