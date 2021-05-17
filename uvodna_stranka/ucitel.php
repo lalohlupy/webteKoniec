@@ -40,7 +40,7 @@
                         $result = $veta->fetchColumn();
                         $heslo = $_POST['heslo_ucitel'];
                         if (password_verify($heslo, $result)) {
-                            header("Location: ../vytvaranie_testov/index_cernan.php");
+                            header("Location: ../pohlad_ucitel/index.php");
                         }
                         else if(!password_verify($heslo, $result)){
                             echo "Zadané heslo je nesprávne!";
