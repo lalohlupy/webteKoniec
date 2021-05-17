@@ -7,16 +7,23 @@ $controller = new Controller();
 $myRandomString = generateRandomString(8);
 $ucitel_id = $_SESSION['meno_ucitelp'];
 
-$temp = $controller->insertTest($ucitel_id , $myRandomString);
-while($temp != 1){
-    generateRandomString(8);
     $temp = $controller->insertTest($ucitel_id , $myRandomString);
-}
+    while($temp != 1){
+        echo "1";
+        //$myRandomString = generateRandomString(8);
+        //$temp = $controller->insertTest($ucitel_id , $myRandomString);
+    }
+$_SESSION['test_id'] = $myRandomString;
 $controller->createTable($myRandomString);
 
 //test_name VARCHAR(30) NOT NULL,
 //$_SESSION['key'] = $myRandomString;
-//var_dump($_POST);
+//if(isset($_POST)){
+//    var_dump($_POST);
+//    $_POST = array();
+//}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +47,7 @@ $controller->createTable($myRandomString);
     <ol id="testListC"></ol>
 </div>
 
-<label for="testNameC">Nazov testu:</label>
+<label for="testNameC">Nazov otazky:</label>
 <textarea id="testNameC" name="testName" rows="1" cols="25"></textarea>
 <ul onchange="show_hide()">
     <li>

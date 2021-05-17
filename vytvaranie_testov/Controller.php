@@ -10,31 +10,11 @@ class Controller
         $this->conn = (new Database())->getConnection();
     }
 
-//    public function selectQuestion($string){  //nefunguje
-//        try{
-//            echo $string;
-//            $stmt = $this->conn->prepare("select * from $string");
-//            echo "111";
-//            //echo var_dump($sql);
-//            if($stmt == false){
-//                echo "cc";
-//                return 0;
-//            }
-//            echo "1";
-//            $temp = $stmt->execute();
-//            echo "f";
-//        }        catch (PDOException $e){
-//            return "Error" . $e->getMessage();;
-//        }
-//
-//        return $temp;
-//    }
-
     public function createTable($myRandomString){
         try {
             $sql = $this->conn->prepare("CREATE TABLE $myRandomString (
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        test_code VARCHAR(64) NOT NULL
+        test_code VARCHAR(256) NOT NULL
         )");
 
             $temp = $sql->execute();
@@ -89,6 +69,17 @@ class Controller
         try{
 
             $sql =  "INSERT INTO tests (ucitel_id, test_id) VALUES ('$ucitel_id', '$test_id')";
+            $this->conn->exec($sql);
+        }
+        catch (PDOException $e){
+            return "Error" . $e->getMessage();
+        }
+        return 1;
+    }
+
+    public function insertQuestion($table , $html){
+        try{
+            $sql = "INSERT INTO $table (test_code) VALUE ('$html')";
             $this->conn->exec($sql);
         }
         catch (PDOException $e){
