@@ -32,23 +32,20 @@
             </form>
 
             <?php
-                require_once '../config.php';
+                require_once '../vytvaranie_testov/Controller.php';
+                $controller = new Controller();
 
                 if(!empty($_POST['id'])){
                     if(is_numeric($_POST['id'])) {
                         $login = $_POST['id'];
-                        $sql = $conn->prepare("SELECT COUNT(*) FROM teachers WHERE id_ucitel='$login'");
-                        $sql->execute();
-                        $result = $sql->fetchColumn();
+                        $result = $controller->selectTeacher($login);
                         if ($result > 0) {
                             echo "Toto id sa uz nachádza v databáze!";
                         } else if (!empty($_POST['meno_ucitel']) && !empty($_POST['priezvisko_ucitel']) && !empty($_POST['id'])
                             && !empty($_POST['password'])) {
                             $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                            $sql = "INSERT INTO teachers (meno_ucitel, priezvisko_ucitel, id_ucitel, heslo_ucitel)
-                    VALUES ('{$_POST['meno_ucitel']}', '{$_POST['priezvisko_ucitel']}', '{$_POST['id']}', 
-                            '{$hash}')";
-                            $conn->exec($sql);
+                            $controller->insertTeacher($hash);
+
                             header("Location: ucitel.php");
                         }
                     }

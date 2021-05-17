@@ -26,18 +26,18 @@
             </form>
             <a class="size_a" href="registracia_ucitela.php">Registrovať</a>
             <?php
-                require_once '../config.php';
+                require_once '../vytvaranie_testov/Controller.php';
+                $controller = new Controller();
+
+                session_start();
+                $_SESSION['meno_ucitelp'] = $_POST['id_ucitel'];
 
                 if(!empty($_POST['id_ucitel']) && !empty($_POST['heslo_ucitel'])){
                     $login = $_POST['id_ucitel'];
-                    $sql = $conn->prepare("SELECT COUNT(*) FROM teachers WHERE id_ucitel='$login'");
-                    $sql->execute();
-                    $result = $sql->fetchColumn();
+                    $result = $controller->selectTeacher($login);
 
                     if($result == 1) {
-                        $veta = $conn->prepare("SELECT heslo_ucitel from teachers WHERE id_ucitel='$login'");
-                        $veta->execute();
-                        $result = $veta->fetchColumn();
+                        $result = $controller->checkPassword($login);
                         $heslo = $_POST['heslo_ucitel'];
                         if (password_verify($heslo, $result)) {
                             header("Location: ../pohlad_ucitel/index.php");

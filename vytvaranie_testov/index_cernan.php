@@ -2,11 +2,16 @@
 require_once "functions.php";
 require_once "Controller.php";
 session_start();
-
+$controller = new Controller();
 
 $myRandomString = generateRandomString(8);
-$controller = new Controller();
-//echo $myRandomString;
+$ucitel_id = $_SESSION['meno_ucitelp'];
+
+$temp = $controller->insertTest($ucitel_id , $myRandomString);
+while($temp != 1){
+    generateRandomString(8);
+    $temp = $controller->insertTest($ucitel_id , $myRandomString);
+}
 $controller->createTable($myRandomString);
 
 //test_name VARCHAR(30) NOT NULL,
@@ -28,7 +33,7 @@ $controller->createTable($myRandomString);
     <script src="../js/tvorenieOtazok.js"></script>
     <title>Vytvaranie testov</title>
 </head>
-<body class="container">
+<body>
 
 
 <div id="questionDivC">
