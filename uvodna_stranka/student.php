@@ -6,29 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/student_login_css.css">
     <title>Prihlasenie</title>
 </head>
-<body style="background-color: #aaaabb;">
+<body>
 <div class="container">
-    <div class="center" style="background-color: whitesmoke; margin-top: 200px; border-radius: 15px; width: 50%; margin-left: 300px; border: solid 2px">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
         <form method="post">
-            <label for="kluc">Zadajte klúč:</label><br>
-            <input type="text" id="kluc" name="kluc" required><br>
+            <label for="kluc"><b>Zadajte klúč:</b></label><br>
+            <input type="text" id="kluc" class="fadeIn first" name="kluc" placeholder="kluc" required><br>
 
-            <label for="meno_student">Meno:</label><br>
-            <input type="text" id="meno_student" name="meno_student" required><br>
+            <label for="meno_student"><b>Meno:</b></label><br>
+            <input type="text" id="meno_student" class="fadeIn second" name="meno_student" placeholder="meno" required><br>
 
-            <label for="priezvisko_student">Priezvisko:</label><br>
-            <input type="text" id="priezvisko_student" name="priezvisko_student" required><br>
+            <label for="priezvisko_student"><b>Priezvisko:</b></label><br>
+            <input type="text" id="priezvisko_student" class="fadeIn third" name="priezvisko_student" placeholder="priezvisko" required><br>
 
-            <label for="id_student">Vaše id:</label><br>
-            <input type="text" id="id_student" name="id_student" required><br><br>
+            <label for="id_student"><b>Vaše id:</b></label><br>
+            <input type="text" id="id_student" class="fadeIn fourth" name="id_student" placeholder="AIS ID" required><br><br>
 
-            <input type="submit" class="btn btn-primary" value="Potvrdit">
+            <input type="submit" class="btn btn-primary fadeIn fifth" value="Potvrdit">
         </form>
     </div>
 </div>
