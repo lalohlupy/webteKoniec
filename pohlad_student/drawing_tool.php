@@ -17,7 +17,7 @@
     <title>Drawing Tool</title>
 </head>
 <body>
-<nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark" >
     <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
         <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

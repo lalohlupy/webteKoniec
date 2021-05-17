@@ -2,6 +2,7 @@ var countM = 0;
 var checkbox_idm;
 var label_idm;
 var delete_idm;
+var pole_deleteidm = [];
 
 function show_hide(){
     if (document.getElementById("multipleAnswersC").checked) {
@@ -9,13 +10,14 @@ function show_hide(){
         document.getElementById("madivC").style.display = "block";
     } else {
         document.getElementById("maC").style.display = "none";
+        document.getElementById("maC").innerHTML = "";
+        document.getElementById("madivC").style.display = "none";
         document.getElementById("madivC").innerHTML = "";
-        countM = 0;
+        pole_deleteidm = [];
     }
 }
 
 function newCheckbox() {
-    //var maC = document.getElementById("maC");
     var maC = document.getElementById("maC");
     var checkbox = document.createElement('input');
     var label = document.createElement('label');
@@ -26,7 +28,6 @@ function newCheckbox() {
     checkbox_idm = "namem" + countM;
     checkbox.id = checkbox_idm;
 
-
     label.htmlFor = checkbox_idm;
     label_idm = "labelm" + countM;
     label.id = label_idm;
@@ -35,7 +36,7 @@ function newCheckbox() {
     btn_deletem.textContent = "Delete";
     delete_idm = "delete_checkbox" + countM;
     btn_deletem.id = delete_idm;
-    //btn_deletem.onclick = deleteCheckbox(checkbox_idm, this.label_idm, this.delete_idm);
+    pole_deleteidm.push(delete_idm);
     btn_deletem.setAttribute("onclick" , "deleteCheckbox(this.id)");
 
     maC.appendChild(checkbox);
@@ -61,12 +62,26 @@ function newButton(){
 }
 function deleteCheckbox(checkbox){
     checkbox = checkbox.toString();
-    string = checkbox.slice(-1);
-    alert(string);
-    //document.getElementById(checkbox).removeChild();
+    var string = checkbox.slice(-1);
+    var index;
+
+    if(countM > 9 && checkbox.slice(14,-1) !== 'x'){
+        string = checkbox.slice(-2);
+    }
+    else if(countM > 99 && checkbox.slice(14,-2) !== 'x'){
+        string = checkbox.slice(-3);
+    }
+    else if(countM > 999 && checkbox.slice(14,-3) !== 'x'){
+        string = checkbox.slice(-4);
+    }
+
+    index = pole_deleteidm.indexOf("delete_checkbox" + string);
+    pole_deleteidm.splice(index,1);
+
     document.getElementById(checkbox).remove();
     document.getElementById("namem"+string).remove();
     document.getElementById("labelm"+string).remove();
-    //document.getElementById("delete_idm"+string).remove();
 }
+
+
 
