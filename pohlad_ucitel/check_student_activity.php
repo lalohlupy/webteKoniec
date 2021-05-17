@@ -31,7 +31,7 @@
                     <a href="five_types_of.php" class="nav-link">Define 5 Types of Questions</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="check_student_activity.php" class="nav-link active">Check Student Activity</a>
+                    <a href="#" class="nav-link active">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
                     <a href="check_submit_exams.php" class="nav-link">Chech Submited Exams</a>

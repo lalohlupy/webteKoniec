@@ -24,7 +24,7 @@
                     <a href="index.php" class="nav-link">Define and Edit Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="define_time_limit.php" class="nav-link  active">Define Time Limit for Exams</a>
+                    <a href="#" class="nav-link  active">Define Time Limit for Exams</a>
                 </li>
                 <li class="nav-item active">
                     <a href="five_types_of.php" class="nav-link">Define 5 Types of Questions</a>

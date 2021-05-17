@@ -33,13 +33,13 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                         <a href="#" class="nav-link active">Show Exam</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/formula_sheets.php" class="nav-link">Formula Sheets</a>
+                        <a href="formula_sheets.php" class="nav-link">Formula Sheets</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/drawing_tool.php" class="nav-link">Drawing Tool</a>
+                        <a href="drawing_tool.php" class="nav-link">Drawing Tool</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/scan_work.php" class="nav-link">Scan work</a>
+                        <a href="scan_work.php" class="nav-link">Scan work</a>
                     </li>
                     <li class="nav-item active">
                         <span class="nav-link">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>

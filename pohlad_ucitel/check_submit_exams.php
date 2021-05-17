@@ -33,7 +33,7 @@
                     <a href="check_student_activity.php" class="nav-link">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="check_submit_exams.php" class="nav-link active">Chech Submited Exams</a>
+                    <a href="#" class="nav-link active">Chech Submited Exams</a>
                 </li>
                 <li class="nav-item active">
                     <a href="export_exams.php" class="nav-link">Export Exams</a>
