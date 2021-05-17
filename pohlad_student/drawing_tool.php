@@ -32,7 +32,7 @@
                     <a href="formula_sheets.php" class="nav-link">Formula Sheets</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="drawing_tool.php" class="nav-link active">Drawing Tool</a>
+                    <a href="#" class="nav-link active">Drawing Tool</a>
                 </li>
                 <li class="nav-item active">
                     <a href="scan_work.php" class="nav-link">Scan work</a>
@@ -55,6 +55,7 @@
                         session_start();
                         if (isset($_SESSION['meno_student'])) {
                             echo $_SESSION['meno_student'];
+                            echo " ".$_SESSION['priezvisko_student'];
                         }
                         ?></span>
             </div>

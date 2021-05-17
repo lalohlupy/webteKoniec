@@ -50,6 +50,7 @@
                         session_start();
                         if (isset($_SESSION['meno_student'])) {
                             echo $_SESSION['meno_student'];
+                            echo " ".$_SESSION['priezvisko_student'];
                         }
                         ?></span>
             </div>
