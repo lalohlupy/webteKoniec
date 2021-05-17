@@ -24,28 +24,28 @@
                     <a href="#" class="nav-link active">Define and Edit Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/" class="nav-link">Define Time Limit for Exams</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/define_time_limit.php" class="nav-link">Define Time Limit for Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/" class="nav-link">Define 5 Types of Questions</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/five_types_of.php" class="nav-link">Define 5 Types of Questions</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/" class="nav-link">Check Student Activity</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_student_activity.php" class="nav-link">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/" class="nav-link">Chech Submited Exams</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php" class="nav-link">Chech Submited Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/" class="nav-link">Export Exams</a>
+                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/export_exams.php" class="nav-link">Export Exams</a>
                 </li>
             </ul>
             <div>
-                    <span style="color: darkorange">LOGGED IN AS: <?php
-                        session_start();
+                <span style="color: darkorange">LOGGED IN AS: <?php
+                    session_start();
 //                        if (isset($_SESSION['meno_student'])) {
 //                            echo $_SESSION['meno_student'];
 //                        }
-                        ?></span>
+                    ?></span>
             </div>
         </div>
     </div>
