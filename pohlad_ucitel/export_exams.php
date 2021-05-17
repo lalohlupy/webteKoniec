@@ -21,19 +21,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/index.php" class="nav-link">Define and Edit Exams</a>
+                    <a href="index.php" class="nav-link">Define and Edit Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/define_time_limit.php" class="nav-link">Define Time Limit for Exams</a>
+                    <a href="define_time_limit.php" class="nav-link">Define Time Limit for Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/five_types_of.php" class="nav-link">Define 5 Types of Questions</a>
+                    <a href="five_types_of.php" class="nav-link">Define 5 Types of Questions</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_student_activity.php" class="nav-link">Check Student Activity</a>
+                    <a href="check_student_activity.php" class="nav-link">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php" class="nav-link">Chech Submited Exams</a>
+                    <a href="check_submit_exams.php" class="nav-link">Chech Submited Exams</a>
                 </li>
                 <li class="nav-item active">
                     <a href="#" class="nav-link active">Export Exams</a>
