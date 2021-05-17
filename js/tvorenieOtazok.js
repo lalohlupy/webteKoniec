@@ -1,7 +1,8 @@
 
-var index = 0;
+var index = 1;
 
 function myFunction() {
+
     var questionId = "questionC";
     var divId = "divC"+index;
     var divNode = document.createElement("DIV");
@@ -45,13 +46,13 @@ function myFunction() {
         $(tempId).append(node);
         $(tempId).append(temp);
         //document.getElementById(divId).appendChild(node);
-        document.getElementById(divId).appendChild(textarea);
+        if(check2 == true) {document.getElementById(divId).appendChild(textarea);}
 
 
         var jsonObject = $(tempId).html();
         $.ajax({
-            type : "POST",
-            url : "index_cernan.php",
+            type : 'POST',
+            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',
             dataType : 'text',
             data : {
                 json : jsonObject
@@ -66,7 +67,7 @@ function myFunction() {
             }
 
         });
-}
+    }
 }
 
 
