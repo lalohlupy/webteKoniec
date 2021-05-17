@@ -51,7 +51,10 @@
         </div>
     </div>
 </nav>
-<div id="working"></div>
+<div class="container" style="margin-top: 15vh;">
+    <h1>Aktivita studentov(kto skoncil test/ kto nie)...</h1>
+    <div id="working"></div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script>
     const onVisibilityChange = () => {
@@ -65,7 +68,7 @@
     let i = 0;
     const intervalCallback = () => {
         i++;
-        $.get('http://147.175.98.50/webteKoniec/pohlad_ucitel/rest.php', (data) => {
+        $.get('https://wt50.fei.stuba.sk/webteKoniec/pohlad_ucitel/rest.php', (data) => {
             const response = JSON.parse(data);
             $('#working').text(i + ' ' + response.map(student => student.name).join(', '));
         });
