@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/student_login_css.css">
     <title>Prihlasenie</title>
 </head>
+<body>
 <div class="container">
     <div class="wrapper fadeInDown">
         <div id="formContent">
