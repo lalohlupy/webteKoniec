@@ -26,7 +26,7 @@
             <label for="priezvisko_student"><b>Priezvisko:</b></label><br>
             <input type="text" id="priezvisko_student" class="fadeIn third" name="priezvisko_student" placeholder="priezvisko" required><br>
 
-            <label for="id_student"><b>Vaše id:</b></label><br>
+            <label for="id_student"><b>Vaše AIS ID (číslo):</b></label><br>
             <input type="text" id="id_student" class="fadeIn fourth" name="id_student" placeholder="AIS ID" required><br><br>
 
             <input type="submit" class="btn btn-primary fadeIn fifth" value="Potvrdit">
