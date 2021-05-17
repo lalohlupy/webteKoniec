@@ -56,9 +56,62 @@
         </div>
     </div>
 </nav>
-<div class="container" style="margin-top: 15vh;">
-        <h1>CO SEM KURVA DAM ????!!!!</h1>
+<div class="container" style="margin-top: 15vh;flex-direction: column; display: flex; align-items:center;">
+    <h1>Make your custom formulas:</h1>
+    <div id="mathfield" class="container">
+        <math-field id="mf" virtual-keyboard-mode="manual">f(x)</math-field>
+        <label>Latex</label>
+        <textarea class="output" id="latex" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea></textarea>
+    </div>
+    <div class="button">
+        <button id="save-to-png">Save to PNG</button>
+    </div>
 </div>
+<script src='https://unpkg.com/mathlive/dist/mathlive.js'></script>
+<script type="module">
+    import * as htmlToImage from '../js/htmlToImage.mjs';
+    import MathLive from 'mathlive';
+    import { makeMathField } from 'https://unpkg.com/mathlive/dist/mathlive.mjs';
+
+
+    // MathLive.makeMathField(document.getElementById('mathfield'),  {
+    //     virtualKeyboardMode: "manual",
+    //     virtualKeyboards: 'numeric symbols'
+    // });
+
+    const mf = makeMathField('mf', {
+        smartMode: true,
+        virtualKeyboardMode: 'manual',
+        onContentDidChange: (mf) => {
+            document.getElementById('latex').value = mf.getValue();
+        },
+    });
+
+    // document.querySelector('math-field').addEventListener('input', (ev) => {
+    //     console.log(ev.target.value):
+    // });
+
+    document.getElementById('latex').addEventListener('input', (ev) => {
+        mf.setValue(ev.target.value);
+    });
+
+    document
+        .getElementById('save-to-png')
+        .addEventListener('click', (ev) => {
+            htmlToImage
+                .toPng(
+                    document
+                        .getElementById('mf')
+                        .querySelector('.ML__mathlive')
+                )
+                .then((data) => {
+                    var link = document.createElement('a');
+                    link.download = 'formula.png';
+                    link.href = data;
+                    link.click();
+                });
+        });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
