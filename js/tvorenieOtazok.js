@@ -56,7 +56,7 @@ function myFunction() {
                 json : jsonObject
             },
             success: function (data){
-                alert(data);
+                //alert(data);
             },
             error: function (xhr ,request , error){
                 console.log(arguments);

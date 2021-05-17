@@ -32,6 +32,7 @@
             session_start();
             $_SESSION['meno_ucitelp'] = $_POST['id_ucitel'];
 
+
             if(!empty($_POST['id_ucitel']) && !empty($_POST['heslo_ucitel'])){
                 $login = $_POST['id_ucitel'];
                 $result = $controller->selectTeacher($login);
