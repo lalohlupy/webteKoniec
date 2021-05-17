@@ -1,5 +1,17 @@
 <?php
+require "../vytvaranie_testov/Controller.php";
+
+session_start();
+$controller = new Controller();
+
+
+$questions = $controller->selectTableQuestion($_SESSION['kluc']);
+
+
 ?>
+
+<script rel="script" src="../js/jquery-3.6.0.min.js"></script>
+
 <!doctype html>
 <html lang="sk">
 <head>
@@ -44,9 +56,10 @@
                 </ul>
                 <div>
                     <span style="color: darkorange">LOGGED IN AS: <?php
-                        session_start();
+
                         if (isset($_SESSION['meno_student'])) {
                             echo $_SESSION['meno_student'];
+                            echo " ".$_SESSION['priezvisko_student'];
                         }
                         ?></span>
                 </div>
@@ -57,6 +70,14 @@
         <div class="container ">
             <form class="align-items-center" >
                 <div style="margin-left: 30%">
+                    <div id="testQuestions">
+                        <p>test:</p>
+                        <?php
+                        foreach ($questions as $question){
+                            echo $question->getTestCode();
+                        }
+                        ?>
+                    </div>
                     <div class="mb-3 w-50" id="testQuestionNum1"><!-- id na zaklade ktorych potom vlozim testove otazky -->
                         <label for="testQuestionNum1" class="form-label">1. Question</label>
                         <input type="text" class="form-control input-lg" id="testQuestionNum1" aria-describedby="testQuestion1">
@@ -92,3 +113,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<script>
+//    var tempId = "#testQuestions";
+//
+//    $(tempId).html(
+//
+//        //var_dump($questions);
+////        foreach ($questions as $question){
+////            echo "1";
+////            //
+////        }
+//
+//    );
+</script>

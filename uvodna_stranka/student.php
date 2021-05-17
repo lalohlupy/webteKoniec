@@ -43,6 +43,9 @@
         if (isset($_POST['meno_student'])) {
             session_start();
             $_SESSION['meno_student'] = $_POST['meno_student'];
+            $_SESSION['priezvisko_student'] = $_POST['priezvisko_student'];
+            $_SESSION['kluc'] = $_POST['kluc'];
+            $_SESSION['id_student'] = $_POST['id_student'];
         }
         header("Location: ../pohlad_student/index.php");
     }

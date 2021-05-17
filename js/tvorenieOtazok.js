@@ -7,26 +7,32 @@ function myFunction() {
     var divId = "divC"+index;
     var divNode = document.createElement("DIV");
     divNode.setAttribute("id" , divId);
+
     document.getElementById("testListC").appendChild(divNode);
 
     if(document.getElementById(divId) != null){
 
         var node = document.createElement("LI");                //pridaj list
         node.setAttribute("id" , questionId+index);
+        var bold = document.createElement("B");
         index++;
         var text = document.getElementById("testNameC").value;      //pridaj nazov
         var textnode = document.createTextNode(text);
-        node.appendChild(textnode);
+        bold.appendChild(textnode);
+        node.appendChild(bold);
 
 
         var check1 = document.getElementById("multipleAnswersC").checked;
         var check2 = document.getElementById("shortAnswerC").checked;
+        var check3 = document.getElementById("pairAnswersC").checked;
+        var check4 = document.getElementById("imageAnswersC").checked;
         if(check1 == true){
             var temp = $("#maC").html();
             //alert(temp);
             text = "- vyber z moznosti";
             textnode = document.createTextNode(text);
-            node.appendChild(textnode);
+            bold.appendChild(textnode);
+            node.appendChild(bold);
             document.getElementById("maC").style.display = "none";
             document.getElementById("maC").innerHTML = "";
         }
@@ -34,12 +40,30 @@ function myFunction() {
             var textarea = document.createElement("textarea");
             text = "- kratka slovna odpoved";
             textnode = document.createTextNode(text);
-            node.appendChild(textnode);
+            bold.appendChild(textnode);
+            node.appendChild(bold);
         }
-        else {
+        else if(check3 == true) {
             text = "- parovanie otazok";
             textnode = document.createTextNode(text);
-            node.appendChild(textnode);
+            bold.appendChild(textnode);
+            node.appendChild(bold);
+        }
+        else if(check4 == true){
+            text = "- vlozenie obrazka";                //<input type="file" id="img" name="img" accept="image/*">
+            var imagenode = document.createElement("input");
+            imagenode.setAttribute("type" , "file");
+            imagenode.setAttribute("accept" , "image/*");
+            imagenode.setAttribute("id" , "image"+index);
+            textnode = document.createTextNode(text);
+            bold.appendChild(textnode);
+            node.appendChild(bold);
+        }
+        else{
+            text = "- vlozenie mat. vzorca";
+            textnode = document.createTextNode(text);
+            bold.appendChild(textnode);
+            node.appendChild(bold);
         }
         //alert(divId);
         tempId = "#"+divId;
@@ -47,7 +71,7 @@ function myFunction() {
         $(tempId).append(temp);
         //document.getElementById(divId).appendChild(node);
         if(check2 == true) {document.getElementById(divId).appendChild(textarea);}
-
+        if(check4 == true) {document.getElementById(divId).appendChild(imagenode);}
 
         var jsonObject = $(tempId).html();
         $.ajax({
@@ -58,7 +82,7 @@ function myFunction() {
                 json : jsonObject
             },
             success: function (data){
-                alert(data);
+                //alert(data);
             },
             error: function (xhr ,request , error){
                 console.log(arguments);

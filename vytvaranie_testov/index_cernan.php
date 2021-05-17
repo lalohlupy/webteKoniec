@@ -8,10 +8,10 @@ $myRandomString = generateRandomString(8);
 $ucitel_id = $_SESSION['meno_ucitelp'];
 
     $temp = $controller->insertTest($ucitel_id , $myRandomString);
+
     while($temp != 1){
-        echo "1";
-        //$myRandomString = generateRandomString(8);
-        //$temp = $controller->insertTest($ucitel_id , $myRandomString);
+        $myRandomString = generateRandomString(8);
+        $temp = $controller->insertTest($ucitel_id , $myRandomString);
     }
 $_SESSION['test_id'] = $myRandomString;
 $controller->createTable($myRandomString);
@@ -61,6 +61,14 @@ $controller->createTable($myRandomString);
     <li>
         <input type="radio" id="pairAnswersC" name="testType" value="pairAnswers">
         <label for="pairAnswersC">parovanie otazok</label>
+    </li>
+    <li>
+        <input type="radio" id="imageAnswersC" name="testType" value="imageAnswers">
+        <label for="imageAnswersC">vlozenie obrazka</label>
+    </li>
+    <li>
+        <input type="radio" id="mathAnswersC" name="testType" value="mathAnswers">
+        <label for="mathAnswersC">vlozenie matematickeho vzorca</label>
     </li>
 </ul>
 <button onclick="myFunction()">Pridat otazku</button>

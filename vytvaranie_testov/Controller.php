@@ -1,5 +1,6 @@
 <?php
 require_once "Database.php";
+require_once "TestClass.php";
 
 class Controller
 {
@@ -13,9 +14,9 @@ class Controller
     public function createTable($myRandomString){
         try {
             $sql = $this->conn->prepare("CREATE TABLE $myRandomString (
-        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        test_code VARCHAR(256) NOT NULL
-        )");
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            test_code VARCHAR(256) NOT NULL
+            )");
 
             $temp = $sql->execute();
         }
@@ -86,6 +87,20 @@ class Controller
             return "Error" . $e->getMessage();
         }
         return 1;
+    }
+
+    public function selectTableQuestion($table){
+        try {
+            $sql = $this->conn->prepare("SELECT * FROM $table");
+            $sql->execute();
+            $questions = $sql->fetchAll(PDO::FETCH_CLASS, "TestClass");
+        }
+        catch (PDOException $e){
+
+            return "Error" . $e->getMessage();
+        }
+
+        return $questions;
     }
 
 }
