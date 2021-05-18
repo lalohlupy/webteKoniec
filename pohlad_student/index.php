@@ -1,11 +1,11 @@
 <?php
-require "../vytvaranie_testov/Controller.php";
-
-session_start();
-$controller = new Controller();
-
-
-$questions = $controller->selectTableQuestion($_SESSION['kluc']);
+//require "../vytvaranie_testov/Controller.php";
+//
+//session_start();
+//$controller = new Controller();
+//
+//
+//$questions = $controller->selectTableQuestion($_SESSION['kluc']);
 
 
 ?>
@@ -56,12 +56,18 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                 </ul>
                 <div>
                     <span style="color: darkorange">LOGGED IN AS: <?php
-
                         if (isset($_SESSION['meno_student'])) {
                             echo $_SESSION['meno_student'];
                             echo " ".$_SESSION['priezvisko_student'];
                         }
                         ?></span>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out</b></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
