@@ -24,12 +24,6 @@
                     <a href="index.php" class="nav-link">Define and Edit Exams</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="define_time_limit.php" class="nav-link">Define Time Limit for Exams</a>
-                </li>
-                <li class="nav-item active">
-                    <a href="five_types_of.php" class="nav-link">Define 5 Types of Questions</a>
-                </li>
-                <li class="nav-item active">
                     <a href="check_student_activity.php" class="nav-link">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
@@ -42,10 +36,17 @@
             <div>
                 <span style="color: darkorange">LOGGED IN AS: <?php
                     session_start();
-                                            if (isset($_SESSION['meno_ucitelp'])) {
-                                                echo $_SESSION['meno_ucitelp'];
-                                            }
+                    if (isset($_SESSION['meno_ucitelp'])) {
+                        echo $_SESSION['meno_ucitelp'];
+                    }
                     ?></span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
