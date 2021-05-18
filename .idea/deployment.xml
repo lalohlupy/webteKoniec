@@ -2,10 +2,17 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="webte">
+      <paths name="WebTech2">
         <serverdata>
           <mappings>
-            <mapping deploy="webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
+            <mapping deploy="/webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="piškot">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
