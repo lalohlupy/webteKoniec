@@ -65,7 +65,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out</b></a>
+                            <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
                         </li>
                     </ul>
                 </div>
