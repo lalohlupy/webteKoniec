@@ -15,7 +15,7 @@ class Controller
         try {
             $sql = $this->conn->prepare("CREATE TABLE $myRandomString (
             id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            test_code VARCHAR(256) NOT NULL
+            test_code VARCHAR(512) NOT NULL
             )");
 
             $temp = $sql->execute();
@@ -25,6 +25,28 @@ class Controller
             return "Error" . $e->getMessage();
         }
         return 1;
+    }
+
+    public function createOtherTable($myRandomString, $length){
+        $phpString = "";
+        for($i = 0; $i < $length; $i++ ){
+            $phpString = $phpString.", "."q".$i." VARCHAR(32)";
+        }
+        $myRandomString = $myRandomString."_A";
+        try {
+            $sql = $this->conn->prepare("CREATE TABLE $myRandomString (
+            id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            student_id INT UNSIGNED NOT NULL
+            $phpString
+            )");
+
+            $temp = $sql->execute();
+        }
+        catch (PDOException $e){
+
+            return "Error" . $e->getMessage();
+        }
+        return $temp;
     }
 
     public function selectTeacher($login){
@@ -66,17 +88,17 @@ class Controller
         return $result;
     }
 
-    public function insertTest($ucitel_id , $test_id){
+    /*public function insertTest($ucitel_id , $test_id){
         try{
 
-            $sql =  "INSERT INTO tests (ucitel_id, test_id) VALUES ('$ucitel_id', '$test_id')";
+            $sql =  "INSERT INTO Tests (ucitel_id, test_id) VALUES ('$ucitel_id', '$test_id')";
             $this->conn->exec($sql);
         }
         catch (PDOException $e){
             return "Error" . $e->getMessage();
         }
         return 1;
-    }
+    }*/
 
     public function insertQuestion($table , $html){
         try{
@@ -101,6 +123,20 @@ class Controller
         }
 
         return $questions;
+    }
+
+    public function selectTests($teacher_id){
+        try {
+            $sql = $this->conn->prepare("SELECT * FROM Tests where ucitel_id = $teacher_id");
+            $sql->execute();
+            $tests = $sql->fetchAll();
+        }
+        catch (PDOException $e){
+
+            return "Error" . $e->getMessage();
+        }
+
+        return $tests;
     }
 
 }

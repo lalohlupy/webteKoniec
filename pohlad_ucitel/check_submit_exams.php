@@ -1,4 +1,7 @@
 <?php
+    require_once "../vytvaranie_testov/Controller.php";
+    session_start();
+
 ?>
 
 <!doctype html>
@@ -33,7 +36,7 @@
                     <a href="check_student_activity.php" class="nav-link">Check Student Activity</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="#" class="nav-link active">Chech Submited Exams</a>
+                    <a href="#" class="nav-link active">Check Submited Exams</a>
                 </li>
                 <li class="nav-item active">
                     <a href="export_exams.php" class="nav-link">Export Exams</a>
@@ -41,7 +44,6 @@
             </ul>
             <div>
                 <span style="color: darkorange">LOGGED IN AS: <?php
-                    session_start();
                                             if (isset($_SESSION['meno_ucitelp'])) {
                                                 echo $_SESSION['meno_ucitelp'];
                                             }
@@ -52,6 +54,38 @@
 </nav>
 <div class="container" style="margin-top: 15vh;">
     <h1>Pozriet si odovzdane testy...</h1>
+    <div id="testContainerC">
+        <h2>Vytvorene testy :</h2>
+        <table>
+            <tr>
+                <th>ID testu</th>
+                <th>datum vytvorenia</th>
+                <!--<th>datum otvorenia</th>
+                <th>datum uzavretia</th>-->
+                <th>nazov testu</th>
+                <th>cas na splnenie</th>
+            </tr>
+            <tbody>
+            <?php foreach($people as $person):?>
+                <?php $placements = $person->getPlacements(); ?>
+                <?php foreach($placements as $placement):
+                    $ohId = $placement->getOhId();
+                    $oh = $personController->getOlympicGame($ohId);
+                    ?>
+                    <tr>
+                        <td><?=$person->getName();?></td>
+                        <td><?=$person->getSurname();?></td>
+                        <td><?=$oh->getYear() ?></td>
+                        <td><?=$placement->getCity();?></td>
+                        <td><?=$oh->getTypeString();?></td>
+                        <td><?=$placement->getDiscipline();?></td>
+                    </tr>
+                <?php endforeach;?>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
