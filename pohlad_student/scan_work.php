@@ -12,11 +12,17 @@ if(!isset($_SESSION['id_student'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script rel="script" src="timer.js"></script>
+    <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Scan work</title>
 </head>
 <body>
+<script>
+    $(window).on('load', function() {
+        start();
+    });
+</script>
 <nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>

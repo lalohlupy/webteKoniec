@@ -16,7 +16,6 @@ function startTimer(duration, display) {
                 timer = sessionStorage.getItem("mytime");
             }
             sessionStorage.setItem("mytime", timer);
-
             if (--timer < 0) {
                 document.getElementById("time").innerHTML = "Čas uplynul!";
                 clearInterval(interval);
@@ -25,7 +24,6 @@ function startTimer(duration, display) {
     }
 
 function start() {
-    $('#myModal').modal('hide');
     var minutym = 60 * min,
     display = document.querySelector('#time');
     startTimer(minutym, display);
