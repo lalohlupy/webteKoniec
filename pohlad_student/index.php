@@ -1,11 +1,11 @@
 <?php
-//require "../vytvaranie_testov/Controller.php";
-//
-//session_start();
-//$controller = new Controller();
-//
-//
-//$questions = $controller->selectTableQuestion($_SESSION['kluc']);
+require "../vytvaranie_testov/Controller.php";
+
+session_start();
+$controller = new Controller();
+
+
+$questions = $controller->selectTableQuestion($_SESSION['kluc']);
 
 
 ?>
