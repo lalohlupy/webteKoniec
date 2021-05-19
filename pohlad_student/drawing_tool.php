@@ -14,6 +14,7 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/drawing_style.css" type="text/css">
+    <script rel="script" src="timer.js"></script>
     <title>Drawing Tool</title>
 </head>
 <body>
@@ -38,7 +39,7 @@
                     <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/scan_work.php" class="nav-link">Scan work</a>
                 </li>
                 <li class="nav-item active">
-                    <span class="nav-link">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>
+                    <span class="nav-link">Time Left: <span id="time"></span></span>
                 </li>
                 <li class="nav-item dropdown">
                     <span class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</span>

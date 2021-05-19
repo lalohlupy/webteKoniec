@@ -1,16 +1,18 @@
 <?php
-require "../vytvaranie_testov/Controller.php";
-
-session_start();
-$controller = new Controller();
-
-
-$questions = $controller->selectTableQuestion($_SESSION['kluc']);
+//require "../vytvaranie_testov/Controller.php";
+//
+//session_start();
+//$controller = new Controller();
+//
+//
+//$questions = $controller->selectTableQuestion($_SESSION['kluc']);
 
 
 ?>
 
 <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
+<script rel="script" src="timer.js"></script>
+
 
 <!doctype html>
 <html lang="sk">
@@ -21,6 +23,11 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
     <title>Testy</title>
 </head>
 <body>
+    <script>
+        $(window).on('load', function() {
+            start();
+        });
+    </script>
     <nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
@@ -42,7 +49,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                         <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/scan_work.php" class="nav-link">Scan work</a>
                     </li>
                     <li class="nav-item active">
-                        <span class="nav-link">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>
+                        <span class="nav-link">Time Left: <span id="time"></span></span>
                     </li>
                     <li class="nav-item dropdown">
                         <span class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</span>
@@ -67,7 +74,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
         </div>
     </nav>
     <div id="prehladTestov" class="border border-primary border-2 rounded-3 w-75" style="margin-top: 10vh; margin-left: 13%; padding: 30px">
-        <div class="container ">
+        <div class="container">
             <form class="align-items-center" >
                 <div style="margin-left: 30%">
                     <div id="testQuestions">
