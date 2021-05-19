@@ -1,0 +1,200 @@
+Index: js/checkboxy.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var index = 0;\r\n\r\nfunction show_hide(){\r\n    if (document.getElementById(\"multipleAnswers\").checked) {\r\n        document.getElementById(\"myDiv\").style.display = \"block\";\r\n    } else {\r\n        document.getElementById(\"myDiv\").style.display = \"none\";\r\n        document.getElementById(\"myDiv\").innerHTML = \"\";\r\n        index = 0;\r\n    }\r\n}\r\n\r\nfunction newCheckbox() {\r\n    var id = \"name\";\r\n    var myDiv = document.getElementById(\"myDiv\");\r\n    var checkbox = document.createElement('input');\r\n    var label = document.createElement('label');\r\n    var text =  document.getElementById(\"odpoved\").value;\r\n\r\n    checkbox.type = \"checkbox\";\r\n    checkbox.id = id + index;\r\n\r\n    label.htmlFor = id + index;\r\n    label.appendChild(document.createTextNode(text));\r\n\r\n    myDiv.appendChild(checkbox);\r\n    myDiv.appendChild(label);\r\n    index++;\r\n}\r\nfunction newButton(){\r\n    if(!document.getElementById(\"pridaj_checkbox\")) {\r\n        var btn = document.createElement(\"BUTTON\");\r\n        var text_pole = document.createElement('input');\r\n        btn.innerHTML = \"Pridat checkbox\";\r\n        btn.id = \"pridaj_checkbox\";\r\n        btn.onclick = newCheckbox;\r\n\r\n        text_pole.type = \"text\";\r\n        text_pole.id = \"odpoved\";\r\n\r\n        myDiv.appendChild(btn);\r\n        myDiv.appendChild(text_pole);\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/checkboxy.js b/js/checkboxy.js
+--- a/js/checkboxy.js	(revision d1dcdeec74d87aaf35409909485652774d5b36be)
++++ b/js/checkboxy.js	(date 1621002519915)
+@@ -1,4 +1,7 @@
+ var index = 0;
++var checkbox_idm;
++var label_idm;
++var delete_idm;
+ 
+ function show_hide(){
+     if (document.getElementById("multipleAnswers").checked) {
+@@ -11,35 +14,51 @@
+ }
+ 
+ function newCheckbox() {
+-    var id = "name";
+     var myDiv = document.getElementById("myDiv");
+     var checkbox = document.createElement('input');
+     var label = document.createElement('label');
+-    var text =  document.getElementById("odpoved").value;
++    var text =  document.getElementById("odpovedm").value;
++    var btn_deletem = document.createElement("BUTTON");
+ 
+     checkbox.type = "checkbox";
+-    checkbox.id = id + index;
++    checkbox_idm = "namem" + index;
++    checkbox.id = checkbox_idm;
+ 
+-    label.htmlFor = id + index;
++    label.htmlFor = checkbox_idm;
++    label_idm = "labelm" + index;
++    label.id = label_idm;
+     label.appendChild(document.createTextNode(text));
+ 
++    btn_deletem.textContent = "Delete";
++    delete_idm = "delete_checkbox" + index;
++    btn_deletem.id = delete_idm;
++    btn_deletem.onclick = deleteCheckbox(this.checkbox_idm, this.label_idm, this.delete_idm);
++
+     myDiv.appendChild(checkbox);
+     myDiv.appendChild(label);
++    myDiv.appendChild(btn_deletem);
+     index++;
+ }
+ function newButton(){
+     if(!document.getElementById("pridaj_checkbox")) {
+         var btn = document.createElement("BUTTON");
+         var text_pole = document.createElement('input');
+-        btn.innerHTML = "Pridat checkbox";
++
++        btn.textContent = "Pridat checkbox";
+         btn.id = "pridaj_checkbox";
+         btn.onclick = newCheckbox;
+ 
+         text_pole.type = "text";
+-        text_pole.id = "odpoved";
++        text_pole.id = "odpovedm";
+ 
+         myDiv.appendChild(btn);
+         myDiv.appendChild(text_pole);
+     }
+ }
++function deleteCheckbox(checkbox, label, delete_id){
++    alert("ide");
++   document.getElementById(checkbox).remove();
++   document.getElementById(label).remove();
++   document.getElementById(delete_id).remove();
++}
+ 
+Index: vytvaranie_testov/index_cernan.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n\r\n?>\r\n<!DOCTYPE html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\r\n    <script rel=\"script\" src=\"../js/jquery-3.6.0.min.js\"></script>\r\n    <title>Vytvaranie testov</title>\r\n</head>\r\n<body class=\"container\">\r\n\r\n\r\n\r\n<div id=\"myDiv\">\r\n    <ol id=\"testList\"></ol>\r\n</div>\r\n<label for=\"testName\">Nazov testu:</label>\r\n<textarea id=\"testName\" name=\"testName\" rows=\"1\" cols=\"25\"></textarea>\r\n<ul onchange=\"show_hide()\">\r\n    <li>\r\n        <input type=\"radio\" id=\"multipleAnswers\" onclick=\"newButton()\" name=\"testType\" value=\"multipleAnswers\">\r\n        <label for=\"multipleAnswers\">vyber z moznosti</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"shortAnswer\" name=\"testType\" value=\"shortAnswer\">\r\n        <label for=\"shortAnswer\">kratka slovna odpoved</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"pairAnswers\" name=\"testType\" value=\"pairAnswers\">\r\n        <label for=\"pairAnswers\">parovanie otazok</label>\r\n    </li>\r\n</ul>\r\n<button onclick=\"myFunction()\">Pridat otazku</button>\r\n<button onclick=\"myFunction2()\">get all questions</button>\r\n<button id=\"btn2\">Show HTML</button>\r\n\r\n\r\n\r\n\r\n\r\n<script>\r\n    /*$(\"document\").ready(function (){\r\n        $(\"body\").append(\"list\");\r\n    })*/\r\n    var index = 0;\r\n\r\nfunction myFunction() {\r\n    var questionId = \"question\";\r\n    var divId = \"div\"+index;\r\n    var divNode = document.createElement(\"DIV\");\r\n    divNode.setAttribute(\"id\" , divId);\r\n    document.getElementById(\"testList\").appendChild(divNode);\r\n\r\n    if(document.getElementById(divId) != null){\r\n\r\n        var node = document.createElement(\"LI\");                //pridaj list\r\n        node.setAttribute(\"id\" , questionId+index);\r\n        index++;\r\n        var text = document.getElementById(\"testName\").value;      //pridaj nazov\r\n        var textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n\r\n\r\n        var check1 = document.getElementById(\"multipleAnswers\").checked;\r\n        var check2 = document.getElementById(\"shortAnswer\").checked;\r\n        if(check1 == true){\r\n            text = \"- vyber z moznosti\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        else if(check2 == true){\r\n            var textarea = document.createElement(\"textarea\");\r\n            text = \"- kratka slovna odpoved\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        else {\r\n            text = \"- parovanie otazok\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        alert(divId);\r\n        tempId = \"#\"+divId;\r\n        $(tempId).append(node);\r\n        document.getElementById(divId).appendChild(node);\r\n        document.getElementById(divId).appendChild(textarea);\r\n    }\r\n    //alert(text);\r\n    document.getElementById(\"testList\").appendChild(node);\r\n    document.getElementById(\"testList\").appendChild(textarea);\r\n\r\n\r\n\r\n}\r\n\r\nfunction myFunction2(){\r\n    var temp = $(\"#testList\").html();\r\n    var json = JSON.stringify(temp);\r\n    alert(json);\r\n\r\n}\r\n\r\n$(\"#btn2\").click(function(){\r\n    var jsonObject = $(\"#testList\").html();\r\n\r\n    $.ajax({\r\n        type : \"POST\",\r\n        url : \"testsIO.php\",\r\n        dataType : 'text',\r\n        data : {\r\n            json : jsonObject\r\n        },\r\n        success: function (data){\r\n            alert(data);\r\n        },\r\n        error: function (xhr ,request , error){\r\n            console.log(arguments);\r\n            var err = eval(\"(\" + xhr.responseText + \")\");\r\n            alert(err.Message);\r\n        }\r\n\r\n    });\r\n\r\n    //var myJSON = JSON.stringify(temp);\r\n    //localStorage.setItem(\"testJSON\", myJSON);\r\n\r\n    //text = localStorage.getItem(\"testJSON\");\r\n    //obj = JSON.parse(temp);\r\n    //alert(temp);\r\n    //$(\"#testDiv\").append(temp);\r\n    //document.getElementById(\"testDiv\").appendChild(temp);\r\n});\r\n\r\n\r\n\r\n\r\n</script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/vytvaranie_testov/index_cernan.php b/vytvaranie_testov/index_cernan.php
+--- a/vytvaranie_testov/index_cernan.php	(revision d1dcdeec74d87aaf35409909485652774d5b36be)
++++ b/vytvaranie_testov/index_cernan.php	(date 1620986962480)
+@@ -12,15 +12,11 @@
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
++    <script rel="script" src="../js/checkboxy.js"></script>
+     <title>Vytvaranie testov</title>
+ </head>
+ <body class="container">
+ 
+-
+-
+-<div id="myDiv">
+-    <ol id="testList"></ol>
+-</div>
+ <label for="testName">Nazov testu:</label>
+ <textarea id="testName" name="testName" rows="1" cols="25"></textarea>
+ <ul onchange="show_hide()">
+@@ -41,9 +37,7 @@
+ <button onclick="myFunction2()">get all questions</button>
+ <button id="btn2">Show HTML</button>
+ 
+-
+-
+-
++<div id = "myDiv"></div>
+ 
+ <script>
+     /*$("document").ready(function (){
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"cernan2\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"origin/master\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1sOPiqLvWb6L6OcK8MA2gxc1Psg\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\vytvaranie_testov\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\uvodna_stranka\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\prihlasenie\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"47b29bc8-a1b5-4ee1-9dd3-177dce3f7c53\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1620740793206</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1620740793206</updated>\r\n      <workItem from=\"1620740795271\" duration=\"3371000\" />\r\n      <workItem from=\"1620818402382\" duration=\"7837000\" />\r\n      <workItem from=\"1620829729797\" duration=\"10824000\" />\r\n      <workItem from=\"1620897035993\" duration=\"1819000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"boaaa\">\r\n      <created>1620741079790</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620741079790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"login system\">\r\n      <created>1620848712774</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620848712774</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"login system\">\r\n      <created>1620898785822</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898785822</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"login system\">\r\n      <created>1620898903736</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898903736</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"login system\">\r\n      <created>1620898971554</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898971554</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"cernan\">\r\n      <created>1620899443507</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899443507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"cernan2\">\r\n      <created>1620899512170</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899512170</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"boaaa\" />\r\n    <MESSAGE value=\"login system\" />\r\n    <MESSAGE value=\"cernan\" />\r\n    <MESSAGE value=\"cernan2\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cernan2\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d1dcdeec74d87aaf35409909485652774d5b36be)
++++ b/.idea/workspace.xml	(date 1621002555579)
+@@ -1,7 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="cernan2" />
++    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="opravena">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -63,7 +69,7 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="47b29bc8-a1b5-4ee1-9dd3-177dce3f7c53" name="Default Changelist" comment="" />
++      <changelist id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="opravena" />
+       <created>1620740793206</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+@@ -72,6 +78,8 @@
+       <workItem from="1620818402382" duration="7837000" />
+       <workItem from="1620829729797" duration="10824000" />
+       <workItem from="1620897035993" duration="1819000" />
++      <workItem from="1620984999993" duration="1737000" />
++      <workItem from="1620986779760" duration="8584000" />
+     </task>
+     <task id="LOCAL-00001" summary="boaaa">
+       <created>1620741079790</created>
+Index: .idea/deployment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PublishConfigData\" autoUpload=\"Always\" serverName=\"webte\" remoteFilesAllowedToDisappearOnAutoupload=\"false\">\r\n    <serverData>\r\n      <paths name=\"webte\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping deploy=\"webteKoniec\" local=\"$PROJECT_DIR$\" web=\"/webteKoniec\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n    </serverData>\r\n    <option name=\"myAutoUpload\" value=\"ALWAYS\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deployment.xml b/.idea/deployment.xml
+--- a/.idea/deployment.xml	(revision d1dcdeec74d87aaf35409909485652774d5b36be)
++++ b/.idea/deployment.xml	(date 1620987140819)
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="PublishConfigData" autoUpload="Always" serverName="webte" remoteFilesAllowedToDisappearOnAutoupload="false">
++  <component name="PublishConfigData" autoUpload="Always" serverName="WEBTECH2" remoteFilesAllowedToDisappearOnAutoupload="false">
+     <serverData>
+-      <paths name="webte">
++      <paths name="WEBTECH2">
+         <serverdata>
+           <mappings>
+-            <mapping deploy="webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
++            <mapping deploy="/Zaverecne_zadanie" local="$PROJECT_DIR$" web="/Zaverecne_zadanie" />
+           </mappings>
+         </serverdata>
+       </paths>
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"PS-211.7036.8\">\r\n    <data-source name=\"zaverecne_zadanie@localhost\" uuid=\"a07b346f-3849-4468-b550-8429c75531b4\">\r\n      <database-info product=\"MySQL\" version=\"8.0.23-0ubuntu0.20.04.1\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)\" dbms=\"MYSQL\" exact-version=\"8.0.23\" exact-driver-version=\"8.0\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"exact\" quoted-identifiers=\"exact\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>xvargam5</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"zaverecne_zadanie\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n      <ssh-properties>\r\n        <enabled>true</enabled>\r\n        <ssh-config-id>6207f292-924c-4a49-b003-b687f895f907</ssh-config-id>\r\n      </ssh-properties>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision d1dcdeec74d87aaf35409909485652774d5b36be)
++++ b/.idea/dataSources.local.xml	(date 1620985355268)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="PS-211.7036.8">
++  <component name="dataSourceStorageLocal">
+     <data-source name="zaverecne_zadanie@localhost" uuid="a07b346f-3849-4468-b550-8429c75531b4">
+       <database-info product="MySQL" version="8.0.23-0ubuntu0.20.04.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="8.0.23" exact-driver-version="8.0">
+         <extra-name-characters>#@</extra-name-characters>

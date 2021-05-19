@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ff1d1174-b84c-48c8-bf0e-157fa18b5afe" name="cernan" url="http://wt33.fei.stuba.sk">
+        <fileTransfer rootFolder="/home/xcernan/public_html" accessType="SFTP" host="wt160.fei.stuba.sk" port="22" sshConfigId="6207f292-924c-4a49-b003-b687f895f907" sshConfig="xvargam5@wt160.fei.stuba.sk:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,426 @@
+Index: js/tvorenieOtazok.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nvar index = 1;\r\n\r\nfunction myFunction() {\r\n\r\n    var questionId = \"questionC\";\r\n    var divId = \"divC\"+index;\r\n    var divNode = document.createElement(\"DIV\");\r\n    divNode.setAttribute(\"id\" , divId);\r\n    document.getElementById(\"testListC\").appendChild(divNode);\r\n\r\n    if(document.getElementById(divId) != null){\r\n\r\n        var node = document.createElement(\"LI\");                //pridaj list\r\n        node.setAttribute(\"id\" , questionId+index);\r\n        index++;\r\n        var text = document.getElementById(\"testNameC\").value;      //pridaj nazov\r\n        var textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n\r\n\r\n        var check1 = document.getElementById(\"multipleAnswersC\").checked;\r\n        var check2 = document.getElementById(\"shortAnswerC\").checked;\r\n        if(check1 == true){\r\n            var temp = $(\"#maC\").html();\r\n            //alert(temp);\r\n            text = \"- vyber z moznosti\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n            document.getElementById(\"maC\").style.display = \"none\";\r\n            document.getElementById(\"maC\").innerHTML = \"\";\r\n        }\r\n        else if(check2 == true){\r\n            var textarea = document.createElement(\"textarea\");\r\n            text = \"- kratka slovna odpoved\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        else {\r\n            text = \"- parovanie otazok\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        //alert(divId);\r\n        tempId = \"#\"+divId;\r\n        $(tempId).append(node);\r\n        $(tempId).append(temp);\r\n        //document.getElementById(divId).appendChild(node);\r\n        if(check2 == true) {document.getElementById(divId).appendChild(textarea);}\r\n\r\n\r\n        var jsonObject = $(tempId).html();\r\n        $.ajax({\r\n            type : 'POST',\r\n            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',\r\n            dataType : 'text',\r\n            data : {\r\n                json : jsonObject\r\n            },\r\n            success: function (data){\r\n                alert(data);\r\n            },\r\n            error: function (xhr ,request , error){\r\n                console.log(arguments);\r\n                var err = eval(\"(\" + xhr.responseText + \")\");\r\n                alert(err.Message);\r\n            }\r\n\r\n        });\r\n    }\r\n}\r\n\r\n\r\n\r\nfunction myFunction2(){\r\n    var temp = $(\"#testListC\").html();\r\n    var json = JSON.stringify(temp);\r\n    alert(json);\r\n\r\n}\r\n/*\r\n$(\"#btn2\").click(function(){\r\n    var jsonObject = $(\"#testListC\").html();\r\n\r\n    $.ajax({\r\n        type : \"POST\",\r\n        url : \"pridavanie_otazok.php\",\r\n        dataType : 'text',\r\n        data : {\r\n        json : jsonObject\r\n        },\r\n        success: function (data){\r\n            alert(data);\r\n        },\r\n        error: function (xhr ,request , error){\r\n            console.log(arguments);\r\n            var err = eval(\"(\" + xhr.responseText + \")\");\r\n            alert(err.Message);\r\n        }\r\n\r\n    });\r\n});*/\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/tvorenieOtazok.js b/js/tvorenieOtazok.js
+--- a/js/tvorenieOtazok.js	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/js/tvorenieOtazok.js	(date 1621286929552)
+@@ -2,7 +2,7 @@
+ var index = 1;
+ 
+ function myFunction() {
+-
++    deleteButtonsDelete();
+     var questionId = "questionC";
+     var divId = "divC"+index;
+     var divNode = document.createElement("DIV");
+@@ -10,7 +10,6 @@
+     document.getElementById("testListC").appendChild(divNode);
+ 
+     if(document.getElementById(divId) != null){
+-
+         var node = document.createElement("LI");                //pridaj list
+         node.setAttribute("id" , questionId+index);
+         index++;
+@@ -27,7 +26,6 @@
+             text = "- vyber z moznosti";
+             textnode = document.createTextNode(text);
+             node.appendChild(textnode);
+-            document.getElementById("maC").style.display = "none";
+             document.getElementById("maC").innerHTML = "";
+         }
+         else if(check2 == true){
+@@ -101,5 +99,14 @@
+     });
+ });*/
+ 
++function deleteButtonsDelete(){
++    if (document.getElementById("multipleAnswersC").checked){
++        for(var i = 0; i < pole_deleteidm.length; i++) {
++                document.getElementById(pole_deleteidm[i]).remove();
++        }
++        pole_deleteidm = [];
++    }
++}
++
+ 
+ 
+Index: js/checkboxy.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var countM = 0;\r\nvar checkbox_idm;\r\nvar label_idm;\r\nvar delete_idm;\r\n\r\nfunction show_hide(){\r\n    if (document.getElementById(\"multipleAnswersC\").checked) {\r\n        document.getElementById(\"maC\").style.display = \"block\";\r\n        document.getElementById(\"madivC\").style.display = \"block\";\r\n    } else {\r\n        document.getElementById(\"maC\").style.display = \"none\";\r\n        document.getElementById(\"madivC\").innerHTML = \"\";\r\n        countM = 0;\r\n    }\r\n}\r\n\r\nfunction newCheckbox() {\r\n    //var maC = document.getElementById(\"maC\");\r\n    var maC = document.getElementById(\"maC\");\r\n    var checkbox = document.createElement('input');\r\n    var label = document.createElement('label');\r\n    var text =  document.getElementById(\"odpovedm\").value;\r\n    var btn_deletem = document.createElement(\"BUTTON\");\r\n\r\n    checkbox.type = \"checkbox\";\r\n    checkbox_idm = \"namem\" + countM;\r\n    checkbox.id = checkbox_idm;\r\n\r\n\r\n    label.htmlFor = checkbox_idm;\r\n    label_idm = \"labelm\" + countM;\r\n    label.id = label_idm;\r\n    label.appendChild(document.createTextNode(text));\r\n\r\n    btn_deletem.textContent = \"Delete\";\r\n    delete_idm = \"delete_checkbox\" + countM;\r\n    btn_deletem.id = delete_idm;\r\n    //btn_deletem.onclick = deleteCheckbox(checkbox_idm, this.label_idm, this.delete_idm);\r\n    btn_deletem.setAttribute(\"onclick\" , \"deleteCheckbox(this.id)\");\r\n\r\n    maC.appendChild(checkbox);\r\n    maC.appendChild(label);\r\n    maC.appendChild(btn_deletem);\r\n    countM++;\r\n}\r\nfunction newButton(){\r\n    if(!document.getElementById(\"pridaj_checkbox\")) {\r\n        var btn = document.createElement(\"BUTTON\");\r\n        var text_pole = document.createElement('input');\r\n\r\n        btn.textContent = \"Pridat checkbox\";\r\n        btn.id = \"pridaj_checkbox\";\r\n        btn.onclick = newCheckbox;\r\n\r\n        text_pole.type = \"text\";\r\n        text_pole.id = \"odpovedm\";\r\n\r\n        madivC.appendChild(btn);\r\n        madivC.appendChild(text_pole);\r\n    }\r\n}\r\nfunction deleteCheckbox(checkbox){\r\n    checkbox = checkbox.toString();\r\n    string = checkbox.slice(-1);\r\n    alert(string);\r\n    //document.getElementById(checkbox).removeChild();\r\n    document.getElementById(checkbox).remove();\r\n    document.getElementById(\"namem\"+string).remove();\r\n    document.getElementById(\"labelm\"+string).remove();\r\n    //document.getElementById(\"delete_idm\"+string).remove();\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/checkboxy.js b/js/checkboxy.js
+--- a/js/checkboxy.js	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/js/checkboxy.js	(date 1621285478489)
+@@ -2,6 +2,7 @@
+ var checkbox_idm;
+ var label_idm;
+ var delete_idm;
++var pole_deleteidm = [];
+ 
+ function show_hide(){
+     if (document.getElementById("multipleAnswersC").checked) {
+@@ -9,13 +10,14 @@
+         document.getElementById("madivC").style.display = "block";
+     } else {
+         document.getElementById("maC").style.display = "none";
++        document.getElementById("maC").innerHTML = "";
++        document.getElementById("madivC").style.display = "none";
+         document.getElementById("madivC").innerHTML = "";
+-        countM = 0;
++        pole_deleteidm = [];
+     }
+ }
+ 
+ function newCheckbox() {
+-    //var maC = document.getElementById("maC");
+     var maC = document.getElementById("maC");
+     var checkbox = document.createElement('input');
+     var label = document.createElement('label');
+@@ -26,7 +28,6 @@
+     checkbox_idm = "namem" + countM;
+     checkbox.id = checkbox_idm;
+ 
+-
+     label.htmlFor = checkbox_idm;
+     label_idm = "labelm" + countM;
+     label.id = label_idm;
+@@ -35,7 +36,7 @@
+     btn_deletem.textContent = "Delete";
+     delete_idm = "delete_checkbox" + countM;
+     btn_deletem.id = delete_idm;
+-    //btn_deletem.onclick = deleteCheckbox(checkbox_idm, this.label_idm, this.delete_idm);
++    pole_deleteidm.push(delete_idm);
+     btn_deletem.setAttribute("onclick" , "deleteCheckbox(this.id)");
+ 
+     maC.appendChild(checkbox);
+@@ -61,12 +62,26 @@
+ }
+ function deleteCheckbox(checkbox){
+     checkbox = checkbox.toString();
+-    string = checkbox.slice(-1);
+-    alert(string);
+-    //document.getElementById(checkbox).removeChild();
++    var string = checkbox.slice(-1);
++    var index;
++
++    if(countM > 9 && checkbox.slice(14,-1) !== 'x'){
++        string = checkbox.slice(-2);
++    }
++    else if(countM > 99 && checkbox.slice(14,-2) !== 'x'){
++        string = checkbox.slice(-3);
++    }
++    else if(countM > 999 && checkbox.slice(14,-3) !== 'x'){
++        string = checkbox.slice(-4);
++    }
++
++    index = pole_deleteidm.indexOf("delete_checkbox" + string);
++    pole_deleteidm.splice(index,1);
++
+     document.getElementById(checkbox).remove();
+     document.getElementById("namem"+string).remove();
+     document.getElementById("labelm"+string).remove();
+-    //document.getElementById("delete_idm"+string).remove();
+ }
+ 
++
++
+Index: vytvaranie_testov/index_cernan.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\nrequire_once \"functions.php\";\r\nrequire_once \"Controller.php\";\r\nsession_start();\r\n$controller = new Controller();\r\n\r\n$myRandomString = generateRandomString(8);\r\n$ucitel_id = $_SESSION['meno_ucitelp'];\r\n\r\n    $temp = $controller->insertTest($ucitel_id , $myRandomString);\r\n    while($temp != 1){\r\n        echo \"1\";\r\n        //$myRandomString = generateRandomString(8);\r\n        //$temp = $controller->insertTest($ucitel_id , $myRandomString);\r\n    }\r\n$_SESSION['test_id'] = $myRandomString;\r\n$controller->createTable($myRandomString);\r\n\r\n//test_name VARCHAR(30) NOT NULL,\r\n//$_SESSION['key'] = $myRandomString;\r\n//if(isset($_POST)){\r\n//    var_dump($_POST);\r\n//    $_POST = array();\r\n//}\r\n\r\n\r\n\r\n?>\r\n<!DOCTYPE html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\r\n    <script rel=\"script\" src=\"../js/jquery-3.6.0.min.js\"></script>\r\n    <script src=\"../js/checkboxy.js\"></script>\r\n    <script src=\"../js/tvorenieOtazok.js\"></script>\r\n    <title>Vytvaranie testov</title>\r\n</head>\r\n<body>\r\n\r\n\r\n<div id=\"questionDivC\">\r\n    <ol id=\"testListC\"></ol>\r\n</div>\r\n\r\n<label for=\"testNameC\">Nazov otazky:</label>\r\n<textarea id=\"testNameC\" name=\"testName\" rows=\"1\" cols=\"25\"></textarea>\r\n<ul onchange=\"show_hide()\">\r\n    <li>\r\n        <input type=\"radio\" id=\"multipleAnswersC\" onclick=\"newButton()\" name=\"testType\" value=\"multipleAnswers\">\r\n        <label for=\"multipleAnswersC\">vyber z moznosti</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"shortAnswerC\" name=\"testType\" value=\"shortAnswer\">\r\n        <label for=\"shortAnswerC\">kratka slovna odpoved</label><br>\r\n    </li>\r\n    <li>\r\n        <input type=\"radio\" id=\"pairAnswersC\" name=\"testType\" value=\"pairAnswers\">\r\n        <label for=\"pairAnswersC\">parovanie otazok</label>\r\n    </li>\r\n</ul>\r\n<button onclick=\"myFunction()\">Pridat otazku</button>\r\n<button onclick=\"myFunction2()\">get all questions</button>\r\n<!-- <button id=\"btn2\">Show HTML</button>  -->\r\n<div id=\"maC\"></div>\r\n<div id=\"madivC\"></div>\r\n\r\n\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/vytvaranie_testov/index_cernan.php b/vytvaranie_testov/index_cernan.php
+--- a/vytvaranie_testov/index_cernan.php	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/vytvaranie_testov/index_cernan.php	(date 1621277732415)
+@@ -1,27 +1,27 @@
+ <?php
+-require_once "functions.php";
+-require_once "Controller.php";
+-session_start();
+-$controller = new Controller();
+-
+-$myRandomString = generateRandomString(8);
+-$ucitel_id = $_SESSION['meno_ucitelp'];
+-
+-    $temp = $controller->insertTest($ucitel_id , $myRandomString);
+-    while($temp != 1){
+-        echo "1";
+-        //$myRandomString = generateRandomString(8);
+-        //$temp = $controller->insertTest($ucitel_id , $myRandomString);
+-    }
+-$_SESSION['test_id'] = $myRandomString;
+-$controller->createTable($myRandomString);
+-
+-//test_name VARCHAR(30) NOT NULL,
+-//$_SESSION['key'] = $myRandomString;
+-//if(isset($_POST)){
+-//    var_dump($_POST);
+-//    $_POST = array();
+-//}
++////require_once "functions.php";
++////require_once "Controller.php";
++//session_start();
++//$controller = new Controller();
++//
++//$myRandomString = generateRandomString(8);
++//$ucitel_id = $_SESSION['meno_ucitelp'];
++//
++////    $temp = $controller->insertTest($ucitel_id , $myRandomString);
++////    while($temp != 1){
++////        echo "1";
++////        //$myRandomString = generateRandomString(8);
++////        //$temp = $controller->insertTest($ucitel_id , $myRandomString);
++////    }
++//$_SESSION['test_id'] = $myRandomString;
++////$controller->createTable($myRandomString);
++//
++////test_name VARCHAR(30) NOT NULL,
++////$_SESSION['key'] = $myRandomString;
++////if(isset($_POST)){
++////    var_dump($_POST);
++////    $_POST = array();
++////}
+ 
+ 
+ 
+Index: config.php
+===================================================================
+diff --git a/config.php b/config.php
+deleted file mode 100644
+--- a/config.php	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ /dev/null	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
+@@ -1,12 +0,0 @@
+-<?php
+-$servername = "localhost";
+-$username = "xvargam5";
+-$password = 'Je#$k1qDHWzwjB';
+-$dbname = "zaverecne_zadanie";
+-
+-try {
+-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+-} catch(PDOException $e) {
+-    echo "Error: " . $e->getMessage();
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"1.2.0\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/deployment.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/deployment.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml\" afterDir=\"false\" />\r\n    <list default=\"true\" id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"1.2.1\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/js/checkboxy.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/js/checkboxy.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/vytvaranie_testov/index_cernan.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/vytvaranie_testov/index_cernan.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"origin/master\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1sOPiqLvWb6L6OcK8MA2gxc1Psg\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../zadanie2/classes/PersonController.php\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Acer\\PhpstormProjects\\webteKoniec\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\vytvaranie_testov\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\uvodna_stranka\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\prihlasenie\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"1.2.0\" />\r\n      <created>1620740793206</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1620740793206</updated>\r\n      <workItem from=\"1620740795271\" duration=\"3371000\" />\r\n      <workItem from=\"1620818402382\" duration=\"7837000\" />\r\n      <workItem from=\"1620829729797\" duration=\"10824000\" />\r\n      <workItem from=\"1620897035993\" duration=\"1819000\" />\r\n      <workItem from=\"1620984005427\" duration=\"8289000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"boaaa\">\r\n      <created>1620741079790</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620741079790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"login system\">\r\n      <created>1620848712774</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620848712774</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"login system\">\r\n      <created>1620898785822</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898785822</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"login system\">\r\n      <created>1620898903736</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898903736</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"login system\">\r\n      <created>1620898971554</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898971554</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"cernan\">\r\n      <created>1620899443507</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899443507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"cernan2\">\r\n      <created>1620899512170</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899512170</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"1.1.6\">\r\n      <created>1620919128594</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620919128594</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"1.2.0\">\r\n      <created>1620935110462</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620935110462</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"boaaa\" />\r\n    <MESSAGE value=\"login system\" />\r\n    <MESSAGE value=\"cernan\" />\r\n    <MESSAGE value=\"cernan2\" />\r\n    <MESSAGE value=\"1.1.6\" />\r\n    <MESSAGE value=\"1.2.0\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"1.2.0\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/.idea/workspace.xml	(date 1621269787370)
+@@ -1,16 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.0">
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" afterDir="false" />
++    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="">
+     <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.1">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -84,6 +78,7 @@
+       <workItem from="1620829729797" duration="10824000" />
+       <workItem from="1620897035993" duration="1819000" />
+       <workItem from="1620984005427" duration="8289000" />
++      <workItem from="1621166239296" duration="2489000" />
+     </task>
+     <task id="LOCAL-00001" summary="boaaa">
+       <created>1620741079790</created>
+@@ -148,7 +143,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1620935110462</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="spraveny delete">
++      <created>1621004451394</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1621004451394</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -173,6 +175,7 @@
+     <MESSAGE value="cernan2" />
+     <MESSAGE value="1.1.6" />
+     <MESSAGE value="1.2.0" />
+-    <option name="LAST_COMMIT_MESSAGE" value="1.2.0" />
++    <MESSAGE value="spraveny delete" />
++    <option name="LAST_COMMIT_MESSAGE" value="spraveny delete" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: uvodna_stranka/index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\"\r\n          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\r\n<!--    <link rel=\"stylesheet\" href=\"../css/style.css\">-->\r\n    <title>Prihlasenie</title>\r\n</head>\r\n</html>\r\n<body style=\"background-color: #aaaabb;\">\r\n    <div style=\"background-color: whitesmoke; margin-top: 200px; border-radius: 15px; width: 50%; margin-left: 400px; border: solid 2px \">\r\n        <div class=\"container\">\r\n            <div class=\"center\" style=\" display: flex;flex-direction: column;align-items:center; padding: 5px; width: 70%\">\r\n            <h1>Prihlásiť sa ako: </h1>\r\n            <a class=\"size_a\" href=\"student.php\" style=\"border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger\">Študent</a>\r\n            <a class=\"size_a\" href=\"ucitel.php\" style=\"border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger\" >Učiteľ</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</body>\r\n</div>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/uvodna_stranka/index.php b/uvodna_stranka/index.php
+--- a/uvodna_stranka/index.php	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/uvodna_stranka/index.php	(date 1621269787389)
+@@ -1,27 +1,46 @@
+ <!doctype html>
+ <html lang="sk">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport"
+-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+-    <meta name="viewport" content="width=device-width, initial-scale=1">
+-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-<!--    <link rel="stylesheet" href="../css/style.css">-->
+-    <title>Prihlasenie</title>
+-</head>
+-</html>
+-<body style="background-color: #aaaabb;">
+-    <div style="background-color: whitesmoke; margin-top: 200px; border-radius: 15px; width: 50%; margin-left: 400px; border: solid 2px ">
+-        <div class="container">
+-            <div class="center" style=" display: flex;flex-direction: column;align-items:center; padding: 5px; width: 70%">
+-            <h1>Prihlásiť sa ako: </h1>
+-            <a class="size_a" href="student.php" style="border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger">Študent</a>
+-            <a class="size_a" href="ucitel.php" style="border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger" >Učiteľ</a>
+-            </div>
+-        </div>
+-    </div>
+-</body>
+-</div>
++    <head>
++        <meta charset="UTF-8">
++        <meta name="viewport"
++              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
++        <meta http-equiv="X-UA-Compatible" content="ie=edge">
++        <meta name="viewport" content="width=device-width, initial-scale=1">
++        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
++        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
++        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
++    <!--    <link rel="stylesheet" href="../css/style.css">-->
++        <script src="https://unpkg.com/mathlive/dist/mathlive.js"></script>
++        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
++        <script id="MathJax-script" async
++                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
++        </script>
++        <title>Prihlasenie</title>
++    </head>
++
++    <body style="background-color: #aaaabb;">
++    <math-field virtual-keyboard-mode="manual">f(x)=</math-field>
++    <math-field ></math-field>
++
++    <div id="mf"></div>
++    <p id="ano"></p>
++        <div style="background-color: whitesmoke; margin-top: 200px; border-radius: 15px; width: 50%; margin-left: 400px; border: solid 2px ">
++            <div class="container">
++                <div class="center" style=" display: flex;flex-direction: column;align-items:center; padding: 5px; width: 70%">
++                <h1>Prihlásiť sa ako: </h1>
++                <a class="size_a" href="student.php" style="border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger">Študent</a>
++                <a class="size_a" href="ucitel.php" style="border: solid 2px; height: 50px; margin: 10px; padding: 10px;border-radius: 10px; background-color: aqua; font-size: larger" >Učiteľ</a>
++                </div>
++            </div>
++        </div>
++        <script>
++            // document.getElementById('mf').addEventListener('input', (ev) => {
++            //     document.getElementById('output').innerHTML = ev.target.getValue();
++            function skuska() {
++                var text = document.getElementById("mf").value;
++                document.getElementById("ano").innerHTML = text;
++            }
++
++        </script>
++    </body>
++</html>
+Index: pohlad_student/drawing_tool.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n?>\r\n\r\n<!doctype html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\"\r\n          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <script\r\n        src=\"https://code.jquery.com/jquery-3.6.0.slim.js\"\r\n        integrity=\"sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=\"\r\n        crossorigin=\"anonymous\"></script>\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x\" crossorigin=\"anonymous\">\r\n    <link rel=\"stylesheet\" href=\"../css/drawing_style.css\" type=\"text/css\">\r\n    <title>Drawing Tool</title>\r\n</head>\r\n<body>\r\n<nav class=\"navbar  fixed-top navbar-expand-sm navbar-dark bg-dark\">\r\n    <div class=\"container\">\r\n        <a href=\"#\" class=\"navbar-brand mb-0 h1\">Navbar</a>\r\n        <button type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" class=\"navbar-toggler\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n            <ul class=\"navbar-nav\">\r\n                <li class=\"nav-item active\">\r\n                    <a href=\"https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/index.php\" class=\"nav-link\">Show Exam</a>\r\n                </li>\r\n                <li class=\"nav-item active\">\r\n                    <a href=\"https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/formula_sheets.php\" class=\"nav-link\">Formula Sheets</a>\r\n                </li>\r\n                <li class=\"nav-item active\">\r\n                    <a href=\"https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/drawing_tool.php\" class=\"nav-link active\">Drawing Tool</a>\r\n                </li>\r\n                <li class=\"nav-item active\">\r\n                    <a href=\"https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/scan_work.php\" class=\"nav-link\">Scan work</a>\r\n                </li>\r\n                <li class=\"nav-item active\">\r\n                    <span class=\"nav-link\">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>\r\n                </li>\r\n                <li class=\"nav-item dropdown\">\r\n                    <span class=\"nav-link dropdown-toggle\" id=\"navbarDropDown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Team</span>\r\n                    <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropDown\">\r\n                        <li><span class=\"dropdown-item\">Boris Gašparovič</span></li>\r\n                        <li><span class=\"dropdown-item\">Peter Čerňan</span></li>\r\n                        <li><span class=\"dropdown-item\">Martin Varga</span></li>\r\n                        <li><span class=\"dropdown-item\">Tomáš Kaňka</span></li>\r\n                    </ul>\r\n                </li>\r\n            </ul>\r\n            <div>\r\n                    <span style=\"color: darkorange\">LOGGED IN AS: <?php\r\n                        session_start();\r\n                        if (isset($_SESSION['meno_student'])) {\r\n                            echo $_SESSION['meno_student'];\r\n                        }\r\n                        ?></span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<div id=\"drawingTool\">\r\n    <div class=\"field\">\r\n        <canvas id=\"canvas\"></canvas>\r\n        <div class=\"tools\">\r\n            <button onclick=\"undo_last()\" type=\"button\" class=\"button\">Undo</button>\r\n            <button onclick=\"clear_canvas()\" type=\"button\" class=\"button\">Clear</button>\r\n            <button onclick=\"download()\" type=\"button\" class=\"button\">Download</button>\r\n\r\n            <div onclick=\"change_color(this)\" class=\"color-field\" style=\"background: black\"></div>\r\n            <div onclick=\"change_color(this)\" class=\"color-field\" style=\"background: red\"></div>\r\n            <div onclick=\"change_color(this)\" class=\"color-field\" style=\"background: blue\"></div>\r\n            <div onclick=\"change_color(this)\" class=\"color-field\" style=\"background: green\"></div>\r\n            <div onclick=\"change_color(this)\" class=\"color-field\" style=\"background: yellow\"></div>\r\n\r\n            <input oninput=\"draw_color = this.value\" type=\"color\" class=\"color-picker\">\r\n            <input oninput=\"draw_width = this.value\" type=\"range\" min=\"1\" max=\"100\" class=\"pen-range\">\r\n        </div>\r\n    </div>\r\n</div>\r\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>\r\n<script src=\"../js/drawing_script.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pohlad_student/drawing_tool.php b/pohlad_student/drawing_tool.php
+--- a/pohlad_student/drawing_tool.php	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/pohlad_student/drawing_tool.php	(date 1621269787398)
+@@ -17,7 +17,7 @@
+     <title>Drawing Tool</title>
+ </head>
+ <body>
+-<nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
++<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark" >
+     <div class="container">
+         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
+         <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+Index: .idea/deployment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PublishConfigData\" autoUpload=\"Always\" remoteFilesAllowedToDisappearOnAutoupload=\"false\">\r\n    <serverData>\r\n      <paths name=\"webte\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping deploy=\"webteKoniec\" local=\"$PROJECT_DIR$\" web=\"/webteKoniec\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n    </serverData>\r\n    <option name=\"myAutoUpload\" value=\"ALWAYS\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deployment.xml b/.idea/deployment.xml
+--- a/.idea/deployment.xml	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/.idea/deployment.xml	(date 1621269787408)
+@@ -1,11 +1,18 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="PublishConfigData" autoUpload="Always" remoteFilesAllowedToDisappearOnAutoupload="false">
++  <component name="PublishConfigData" autoUpload="Always" serverName="WEBTECH2" remoteFilesAllowedToDisappearOnAutoupload="false">
+     <serverData>
+-      <paths name="webte">
++      <paths name="WEBTECH2">
++        <serverdata>
++          <mappings>
++            <mapping deploy="Zaverecne_zadanie" local="$PROJECT_DIR$" web="/Zaverecne_zadanie" />
++          </mappings>
++        </serverdata>
++      </paths>
++      <paths name="cernan">
+         <serverdata>
+           <mappings>
+-            <mapping deploy="webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
++            <mapping local="$PROJECT_DIR$" web="/" />
+           </mappings>
+         </serverdata>
+       </paths>
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"PS-211.7036.8\">\r\n    <data-source name=\"@localhost\" uuid=\"2f59978a-ef73-4cd0-9b1e-e3d8025e025a\">\r\n      <database-info product=\"MySQL\" version=\"8.0.23-0ubuntu0.20.04.1\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)\" dbms=\"MYSQL\" exact-version=\"8.0.23\" exact-driver-version=\"8.0\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"exact\" quoted-identifiers=\"exact\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>xcernan</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"zaverecne_zadanie\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n      <ssh-properties>\r\n        <enabled>true</enabled>\r\n        <ssh-config-id>644ffb7e-d788-4913-9dcd-c7430c204dfb</ssh-config-id>\r\n      </ssh-properties>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 54e26e029b3662977fc3fb0e506536444f8a633a)
++++ b/.idea/dataSources.local.xml	(date 1621269787426)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="PS-211.7036.8">
++  <component name="dataSourceStorageLocal">
+     <data-source name="@localhost" uuid="2f59978a-ef73-4cd0-9b1e-e3d8025e025a">
+       <database-info product="MySQL" version="8.0.23-0ubuntu0.20.04.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="8.0.23" exact-driver-version="8.0">
+         <extra-name-characters>#@</extra-name-characters>
