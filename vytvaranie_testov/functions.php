@@ -1,7 +1,5 @@
 <?php
 
-
-
 function generateRandomString($length) {
 
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -10,9 +8,6 @@ function generateRandomString($length) {
     for ($i = 0; $i < $length; $i++) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
-    //echo $temp;
-    //$temp = selectQuestion($randomString);
-    //if( $temp!=0 && $temp != "Error");
 
     return $randomString;
 }

@@ -12,14 +12,16 @@ function myFunction() {
     if(document.getElementById(divId) != null){
         var node = document.createElement("LI");                //pridaj list
         node.setAttribute("id" , questionId+index);
-        index++;
-        var text = document.getElementById("testNameC").value;      //pridaj nazov
+
+        var text = document.getElementById("questNameC").value;      //pridaj nazov
         var textnode = document.createTextNode(text);
         node.appendChild(textnode);
 
 
         var check1 = document.getElementById("multipleAnswersC").checked;
         var check2 = document.getElementById("shortAnswerC").checked;
+        var check3 = document.getElementById("pairAnswersC").checked;
+        var check4 = document.getElementById("imageAnswersC").checked;
         if(check1 == true){
             var temp = $("#maC").html();
             //alert(temp);
@@ -34,11 +36,32 @@ function myFunction() {
             textnode = document.createTextNode(text);
             node.appendChild(textnode);
         }
-        else {
+        else if(check3 == true){
             text = "- parovanie otazok";
             textnode = document.createTextNode(text);
             node.appendChild(textnode);
         }
+        else if (check4 == true){
+            text = "- vlozenie obrazka";
+            textnode = document.createTextNode(text);
+            var input = document.createElement("INPUT");
+            input.setAttribute("type", "file");
+            input.setAttribute("accept", "image/png, image/gif, image/jpeg");
+            var image = document.createElement("img");
+            image.setAttribute("id" , "image"+index);
+            input.setAttribute("onchange" , "loadFile(event)");
+            input.setAttribute("disabled" , "true");
+            node.appendChild(textnode);
+            node.appendChild(image);
+            node.appendChild(input);
+        }
+        else {
+            text = "- vlozenie matematickeho vzorca";
+            textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+        }
+        index++;
+
         //alert(divId);
         tempId = "#"+divId;
         $(tempId).append(node);
@@ -56,7 +79,7 @@ function myFunction() {
                 json : jsonObject
             },
             success: function (data){
-                alert(data);
+                //alert(data);
             },
             error: function (xhr ,request , error){
                 console.log(arguments);
@@ -68,12 +91,50 @@ function myFunction() {
     }
 }
 
+var loadFile = function(event) {
+    var image = document.getElementById("image"+index);
+    image.style.width = "300px";
+    image.src = URL.createObjectURL(event.target.files[0]);
+};
 
 
 function myFunction2(){
-    var temp = $("#testListC").html();
-    var json = JSON.stringify(temp);
-    alert(json);
+    var nameC = document.getElementById("testNameC").value;
+    var timeC = document.getElementById("testTimeC").value;
+    var lengthC = index-1;
+    if(nameC == ""){
+        alert("Nazov testu nie je zadany!");
+    }
+    else if(timeC == ""){
+        alert("Cas na vypracovanie testu nie je zadany!");
+    }
+    else if(lengthC == 0){
+        alert("Test neobsahuje ziadne otazky!");
+    }
+    else{
+        $.ajax({
+            type : 'POST',
+            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',
+            //dataType : 'text',
+            //contentType : 'text/plain',
+            data : {
+                length : lengthC,
+                name : nameC,
+                time : timeC
+            },
+            success: function (data){
+                //alert(data);
+            },
+            error: function (xhr ,request , error){
+                console.log(arguments);
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+            }
+        });
+        window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
+    }
+
+    //window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php");
 
 }
 /*

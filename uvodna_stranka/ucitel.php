@@ -30,7 +30,6 @@
             $controller = new Controller();
 
             session_start();
-            $_SESSION['meno_ucitelp'] = $_POST['id_ucitel'];
 
             if(!empty($_POST['id_ucitel']) && !empty($_POST['heslo_ucitel'])){
                 $login = $_POST['id_ucitel'];
@@ -40,6 +39,7 @@
                     $result = $controller->checkPassword($login);
                     $heslo = $_POST['heslo_ucitel'];
                     if (password_verify($heslo, $result)) {
+                        $_SESSION['meno_ucitelp'] = $_POST['id_ucitel'];
                         header("Location: ../pohlad_ucitel/index.php");
                     }
                     else if(!password_verify($heslo, $result)){

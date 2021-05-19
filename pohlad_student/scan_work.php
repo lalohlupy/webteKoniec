@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['id_student'])) {
+    header("Location: ../uvodna_stranka/index.php");
+}
 ?>
 
 <!doctype html>
@@ -22,13 +26,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/index.php" class="nav-link">Show Exam</a>
+                    <a href="index.php" class="nav-link">Show Exam</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/formula_sheets.php" class="nav-link">Formula Sheets</a>
+                    <a href="formula_sheets.php" class="nav-link">Formula Sheets</a>
                 </li>
                 <li class="nav-item active">
-                    <a href="https://wt50.fei.stuba.sk/webteKoniec/pohlad_student/drawing_tool.php" class="nav-link">Drawing Tool</a>
+                    <a href="drawing_tool.php" class="nav-link">Drawing Tool</a>
                 </li>
                 <li class="nav-item active">
                     <a href="#" class="nav-link active">Scan work</a>
@@ -47,12 +51,20 @@
                 </li>
             </ul>
             <div>
-                    <span style="color: darkorange">LOGGED IN AS: <?php
-                        session_start();
-                        if (isset($_SESSION['meno_student'])) {
-                            echo $_SESSION['meno_student'];
-                        }
-                        ?></span>
+                <span style="color: darkorange">LOGGED IN AS: <?php
+                    session_start();
+                    if (isset($_SESSION['meno_student'])) {
+                        echo $_SESSION['meno_student'];
+                        echo " ".$_SESSION['priezvisko_student'];
+                    }
+                    ?></span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
