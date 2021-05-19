@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    session_unset();
+?>
+
 <!doctype html>
 <html lang="sk">
 <head>
@@ -25,3 +30,4 @@
     </div>
 </body>
 </div>
+

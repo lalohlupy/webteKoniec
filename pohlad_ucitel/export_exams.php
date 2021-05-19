@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['meno_ucitelp'])){
+    header("Location: ../uvodna_stranka/index.php");
+}
 ?>
 
 <!doctype html>
@@ -35,16 +39,13 @@
             </ul>
             <div>
                 <span style="color: darkorange">LOGGED IN AS: <?php
-                    session_start();
-                    if (isset($_SESSION['meno_ucitelp'])) {
-                        echo $_SESSION['meno_ucitelp'];
-                    }
+                    echo $_SESSION['meno_ucitelp'];
                     ?></span>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>

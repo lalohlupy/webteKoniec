@@ -1,21 +1,27 @@
 <?php
-require_once "functions.php";
-require_once "Controller.php";
 session_start();
-$controller = new Controller();
+if(!isset($_SESSION['meno_ucitelp'])){
+    header("Location: ../uvodna_stranka/index.php");
+}
+else {
+    require_once "functions.php";
+    require_once "Controller.php";
 
-$myRandomString = generateRandomString(8);
-$ucitel_id = $_SESSION['meno_ucitelp'];
-/*
-    $temp = $controller->insertTest($ucitel_id , $myRandomString);
+    $controller = new Controller();
+
+    $myRandomString = generateRandomString(8);
+    $ucitel_id = $_SESSION['meno_ucitelp'];
+
+    $temp = $controller->insertTest($ucitel_id , $myRandomString , "" , "1");
 
     while($temp != 1){
         $myRandomString = generateRandomString(8);
-        $temp = $controller->insertTest($ucitel_id , $myRandomString);
-    }*/
-$_SESSION['test_id'] = $myRandomString;
-$controller->createTable($myRandomString);
+        $temp = $controller->insertTest($ucitel_id , $myRandomString , "" , "1");
+    }
 
+    $_SESSION['test_id'] = $myRandomString;
+    $controller->createTable($myRandomString);
+}
 
 //test_name VARCHAR(30) NOT NULL,
 //$_SESSION['key'] = $myRandomString;
@@ -23,9 +29,6 @@ $controller->createTable($myRandomString);
 //    var_dump($_POST);
 //    $_POST = array();
 //}
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="sk">
@@ -45,13 +48,16 @@ $controller->createTable($myRandomString);
 
 <div class="row">
     <div class="col">
-        <h2>Kod testu : <?=$myRandomString?></h2>
+        <!-- <h2>Kod testu : //$myRandomString</h2> -->
 
         <label for="testNameC">Nazov testu:</label>
-        <br><textarea id="testNameC" name="testName" rows="1" cols="40"></textarea>
+        <br><textarea id="testNameC" name="testName" rows="1" cols="40" ></textarea>
+
+        <br><label for="testTimeC">Cas na vypracovanie:</label>
+        <br><input type="number" id="testTimeC" name="testTime" min="1" max="600" placeholder="od 1 do 600 minut" >
 
         <br><label for="questNameC"><br>Nazov otazky:</label>
-        <br><textarea id="questNameC" name="questName" rows="1" cols="40"></textarea>
+        <br><textarea id="questNameC" name="questName" rows="1" cols="40" ></textarea>
 
         <ul onchange="show_hide()">
             <li>
@@ -89,15 +95,6 @@ $controller->createTable($myRandomString);
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 

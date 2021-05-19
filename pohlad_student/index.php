@@ -4,9 +4,14 @@ require "../vytvaranie_testov/Controller.php";
 session_start();
 $controller = new Controller();
 
+if(!isset($_SESSION['id_student'])) {
+    header("Location: ../uvodna_stranka/index.php");
+}
 
 $questions = $controller->selectTableQuestion($_SESSION['kluc']);
+$table = $controller->selectTable($_SESSION['kluc']);
 
+$_SESSION['time'] = $table['time'];
 
 ?>
 
@@ -20,7 +25,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Testy</title>
 </head>
-<body>
+<body onload="timer()">
     <nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
@@ -42,7 +47,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                         <a href="scan_work.php" class="nav-link">Scan work</a>
                     </li>
                     <li class="nav-item active">
-                        <span class="nav-link">Time Left: <?php //TODO: Doriesit zobrazenie casu?></span>
+                        <span class="nav-link">Time Left: <div id="timerDiv"></div> </span>
                     </li>
                     <li class="nav-item dropdown">
                         <span class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</span>
@@ -65,7 +70,7 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
+                            <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
                         </li>
                     </ul>
                 </div>
@@ -84,31 +89,6 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
                         }
                         ?>
                     </div>
-                    <div class="mb-3 w-50" id="testQuestionNum1"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                        <label for="testQuestionNum1" class="form-label">1. Question</label>
-                        <input type="text" class="form-control input-lg" id="testQuestionNum1" aria-describedby="testQuestion1">
-                        <div id="testQuestion1" class="form-text">Choose the correct answer.</div>
-                    </div>
-                    <div class="mb-3 w-50" id="testQuestionNum2"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                        <label for="testQuestionNum2" class="form-label">2. Question</label>
-                        <input type="text" class="form-control input-lg" id="testQuestionNum2" aria-describedby="testQuestion2">
-                        <div id="testQuestion2" class="form-text">Choose the correct answer.</div>
-                    </div>
-                    <div class="mb-3 w-50" id="testQuestionNum3"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                        <label for="testQuestionNum3" class="form-label">3. Question</label>
-                        <input type="text" class="form-control input-lg" id="testQuestionNum3" aria-describedby="testQuestion3">
-                        <div id="testQuestion3" class="form-text">Choose the correct answer.</div>
-                    </div>
-                    <div class="mb-3 w-50" id="testQuestionNum4"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                        <label for="testQuestionNum4" class="form-label">4. Question</label>
-                        <input type="text" class="form-control input-lg" id="testQuestionNum4" aria-describedby="testQuestion4">
-                        <div id="testQuestion4" class="form-text">Choose the correct answer.</div>
-                    </div>
-                    <div class="mb-3 w-50" id="testQuestionNum5"><!-- id na zaklade ktorych potom vlozim testove otazky -->
-                        <label for="testQuestionNum5" class="form-label">5. Question</label>
-                        <input type="text" class="form-control input-lg" id="testQuestionNum5" aria-describedby="testQuestion5">
-                        <div id="testQuestion5" class="form-text">Choose the correct answer.</div>
-                    </div>
                 </div>
                 <div class="text-center" style="padding: 25px">
                     <button type="submit" class="btn btn-primary ">Submit Your Exam</button>
@@ -120,16 +100,4 @@ $questions = $controller->selectTableQuestion($_SESSION['kluc']);
 </body>
 </html>
 
-<script>
-//    var tempId = "#testQuestions";
-//
-//    $(tempId).html(
-//
-//        //var_dump($questions);
-////        foreach ($questions as $question){
-////            echo "1";
-////            //
-////        }
-//
-//    );
-</script>
+

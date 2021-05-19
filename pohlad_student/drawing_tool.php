@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['id_student'])) {
+    header("Location: ../uvodna_stranka/index.php");
+}
 ?>
 
 <!doctype html>
@@ -62,7 +66,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>

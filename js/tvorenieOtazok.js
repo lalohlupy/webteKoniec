@@ -99,27 +99,42 @@ var loadFile = function(event) {
 
 
 function myFunction2(){
-    let name = document.getElementById("testNameC").value;
-    let string = index-1;
-    $.ajax({
-        type : 'POST',
-        url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',
-        dataType : 'text',
-        data : {
-            text : string,
-            name : name
-        },
-        success: function (data){
-            alert(data);
-        },
-        error: function (xhr ,request , error){
-            console.log(arguments);
-            var err = eval("(" + xhr.responseText + ")");
-            alert(err.Message);
-        }
+    var nameC = document.getElementById("testNameC").value;
+    var timeC = document.getElementById("testTimeC").value;
+    var lengthC = index-1;
+    if(nameC == ""){
+        alert("Nazov testu nie je zadany!");
+    }
+    else if(timeC == ""){
+        alert("Cas na vypracovanie testu nie je zadany!");
+    }
+    else if(lengthC == 0){
+        alert("Test neobsahuje ziadne otazky!");
+    }
+    else{
+        $.ajax({
+            type : 'POST',
+            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',
+            //dataType : 'text',
+            //contentType : 'text/plain',
+            data : {
+                length : lengthC,
+                name : nameC,
+                time : timeC
+            },
+            success: function (data){
+                //alert(data);
+            },
+            error: function (xhr ,request , error){
+                console.log(arguments);
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+            }
+        });
+        window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
+    }
 
-    });
-    window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
+    //window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php");
 
 }
 /*
