@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="941a0fe6-9f49-4c60-af9d-fa2ef4008e0f" name="piškot" url="http://wt160.fei.stuba.sk">
+        <fileTransfer rootFolder="/home/xvargam5/public_html" accessType="SFTP" host="wt160.fei.stuba.sk" port="22" sshConfigId="37143a75-4ade-4ce0-b2eb-4e30b256d0c4" sshConfig="xvargam5@wt160.fei.stuba.sk:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
