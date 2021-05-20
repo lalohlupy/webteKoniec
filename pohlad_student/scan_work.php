@@ -12,7 +12,7 @@ if(!isset($_SESSION['id_student'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script rel="script" src="timer.js"></script>
+
     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Scan work</title>
@@ -68,7 +68,7 @@ if(!isset($_SESSION['id_student'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick="sessionStorage.clear()"><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>
@@ -76,6 +76,7 @@ if(!isset($_SESSION['id_student'])) {
     </div>
 </nav>
 <div class="container" style="margin-top: 15vh;">
+    <span id="time_database" hidden><?= $_SESSION['time']?></span>
     <div id="span1" style="padding: 20px">
         <span id="1" >
             <h1>1. Scan th QR code</h1>
@@ -101,6 +102,7 @@ if(!isset($_SESSION['id_student'])) {
         <img style="margin-top: -5%" src="https://www.pngkit.com/png/full/202-2026598_internet-connection-icon-png-internet-access-icon.png" class="img-thumbnail" width="15%" height="15%" alt="internetConn">
     </div>
 </div>
+<script rel="script" src="timer.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

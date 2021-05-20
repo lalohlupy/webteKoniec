@@ -51,6 +51,7 @@ function myFunction() {
             image.setAttribute("id" , "image"+index);
             input.setAttribute("onchange" , "loadFile(event)");
             input.setAttribute("disabled" , "true");
+            input.setAttribute("class" , "image");
             node.appendChild(textnode);
             node.appendChild(image);
             node.appendChild(input);
@@ -97,8 +98,11 @@ var loadFile = function(event) {
     image.src = URL.createObjectURL(event.target.files[0]);
 };
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-function myFunction2(){
+async function myFunction2(){
     var nameC = document.getElementById("testNameC").value;
     var timeC = document.getElementById("testTimeC").value;
     var lengthC = index-1;
@@ -124,6 +128,7 @@ function myFunction2(){
             },
             success: function (data){
                 //alert(data);
+                window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
             },
             error: function (xhr ,request , error){
                 console.log(arguments);
@@ -131,10 +136,10 @@ function myFunction2(){
                 alert(err.Message);
             }
         });
-        window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
+
     }
 
-    //window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php");
+    //
 
 }
 /*

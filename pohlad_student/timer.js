@@ -1,6 +1,7 @@
-var min = 1;
+var min = document.getElementById("time_database").textContent;
 
-function startTimer(duration, display) {
+
+ function startTimer(duration, display) {
         var timer = duration, minutes, seconds;
         var interval = setInterval(function () {
 
@@ -19,6 +20,7 @@ function startTimer(duration, display) {
             if (--timer < 0) {
                 document.getElementById("time").innerHTML = "Čas uplynul!";
                 clearInterval(interval);
+                sessionStorage.clear();
             }
         }, 1000);
     }

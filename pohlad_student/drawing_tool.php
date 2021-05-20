@@ -16,7 +16,7 @@ if(!isset($_SESSION['id_student'])) {
 <!--            src="https://code.jquery.com/jquery-3.6.0.slim.js"-->
 <!--            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="-->
 <!--            crossorigin="anonymous"></script>-->
-    <script rel="script" src="timer.js"></script>
+
     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/drawing_style.css" type="text/css">
@@ -29,6 +29,8 @@ if(!isset($_SESSION['id_student'])) {
     });
 </script>
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark" >
+    <span id="time_database" hidden><?= $_SESSION['time']?></span>
+
     <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
         <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +75,7 @@ if(!isset($_SESSION['id_student'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick="sessionStorage.clear()"><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>
@@ -99,6 +101,8 @@ if(!isset($_SESSION['id_student'])) {
         </div>
     </div>
 </div>
+<script rel="script" async src="timer.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="../js/drawing_script.js"></script>
 </body>
