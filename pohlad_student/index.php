@@ -91,6 +91,8 @@ $_SESSION['time'] = $table['time'];
     <span id="time_database" hidden><?= $_SESSION['time']?></span>
     <div class="container ">
         <form class="align-items-center" method="post" action="answerUpload.php">
+            <input type="hidden" value="<?= $_SESSION['id_student']?>" name="userId">
+            <input type="hidden" value="<?= $_SESSION['kluc']?>" name="testKey">
             <div style="margin-left: 30%">
                 <div id="testQuestions" >
                     <p>test:</p>
