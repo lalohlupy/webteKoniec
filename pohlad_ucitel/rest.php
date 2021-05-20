@@ -1,5 +1,8 @@
 <?php
+
+include '../vytvaranie_testov/Database.php';
+
 if (isset($_GET)) { // get not done
-    $workingStudents = [array("name" => "Jozo"), array("name" => "Fero")];
-    echo json_encode($workingStudents);
+    $stmt = (new Database())->getConnection()->query("SELECT * FROM finished_tests");
+    echo json_encode($stmt->fetchAll());
 }?>

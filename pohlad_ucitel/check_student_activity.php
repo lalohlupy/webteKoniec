@@ -72,7 +72,8 @@ if(!isset($_SESSION['meno_ucitelp'])){
         i++;
         $.get('rest.php', (data) => {
             const response = JSON.parse(data);
-            $('#working').text(i + ' ' + response.map(student => student.name).join(', '));
+            // response.forEach(data => console.log(data));
+            $('#working').text(response.map(student => student.ais_id).join(', '));
         });
 
     }
