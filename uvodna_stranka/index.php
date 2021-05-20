@@ -24,8 +24,8 @@ session_unset();
 </html>
 <body>
     <div class="container">
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
+        <div class="wrapper fadeInDown" >
+            <div id="formContent" style="margin-bottom: 45%;">
                 <h1>Prihlásiť sa ako: </h1>
                 <a class="fadeIn first" id="student" href="student.php" style="color: #92badd;text-decoration: none;font-weight: 400; font-size: 150%; display: flex;flex-direction: column;align-items:center; "><b>Študent</b></a>
                 <a class="fadeIn second" id="ucitel" href="ucitel.php" style="color: #92badd;text-decoration: none;font-weight: 400; font-size: 150%; display: flex; flex-direction: column;align-items:center; "><b>Učiteľ</b></a>
