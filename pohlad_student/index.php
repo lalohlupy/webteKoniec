@@ -22,15 +22,17 @@ $_SESSION['time'] = $table['time'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script rel="script" src="timer.js"></script>
+    <script rel="script" src="../js/otazkyStudent.js"></script>
     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script rel="script" src="timer.js"></script>
     <title>Testy</title>
 </head>
 <body>
 <script>
     $(window).on('load', function() {
         start();
+        enableInput();
     });
 </script>
 <nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
@@ -77,7 +79,7 @@ $_SESSION['time'] = $table['time'];
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick="sessionStorage.clear()"><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>
@@ -85,10 +87,12 @@ $_SESSION['time'] = $table['time'];
     </div>
 </nav>
 <div id="prehladTestov" class="border border-primary border-2 rounded-3 w-75" style="margin-top: 10vh; margin-left: 13%; padding: 30px">
+
+    <span id="time_database" hidden><?= $_SESSION['time']?></span>
     <div class="container ">
-        <form class="align-items-center" >
+        <form class="align-items-center" method="post" action="answerUpload.php">
             <div style="margin-left: 30%">
-                <div id="testQuestions">
+                <div id="testQuestions" >
                     <p>test:</p>
                     <?php
                     foreach ($questions as $question){
@@ -103,6 +107,7 @@ $_SESSION['time'] = $table['time'];
         </form>
     </div>
 </div>
+<script rel="script" src="timer.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

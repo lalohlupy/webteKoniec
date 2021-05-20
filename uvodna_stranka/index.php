@@ -3,6 +3,10 @@ session_start();
 session_unset();
 ?>
 
+<script>
+    sessionStorage.clear();
+</script>
+
 <!doctype html>
 <html lang="sk">
 <head>
