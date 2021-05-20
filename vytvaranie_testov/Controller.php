@@ -1,5 +1,6 @@
 <?php
 require_once "Database.php";
+require_once "CodeClass.php";
 require_once "TestClass.php";
 
 class Controller
@@ -49,6 +50,34 @@ class Controller
         return $temp;
     }
 
+    public function selectTableQuestion($table){
+        try {
+            $sql = $this->conn->prepare("SELECT * FROM $table");
+            $sql->execute();
+            $questions = $sql->fetchAll(PDO::FETCH_CLASS, "CodeClass");
+        }
+        catch (PDOException $e){
+
+            return "Error" . $e->getMessage();
+        }
+
+        return $questions;
+    }
+
+    public function selectTable($tableName){
+        try {
+            $sql = $this->conn->prepare("SELECT * FROM Tests where test_id = '$tableName'");
+            $sql->execute();
+            $test = $sql->fetch();
+        }
+        catch (PDOException $e){
+
+            return "Error";// . $e->getMessage();
+        }
+
+        return $test;
+    }
+
     public function selectTeacher($login){
         try {
             $sql = $this->conn->prepare("SELECT COUNT(*) FROM teachers WHERE id_ucitel='$login'");
@@ -88,17 +117,28 @@ class Controller
         return $result;
     }
 
-    /*public function insertTest($ucitel_id , $test_id){
+    public function insertTest($ucitel_id , $test_id , $test_name , $test_time){
         try{
 
-            $sql =  "INSERT INTO Tests (ucitel_id, test_id) VALUES ('$ucitel_id', '$test_id')";
+            $sql =  "INSERT INTO Tests (ucitel_id, test_id , name , time) VALUES ('$ucitel_id', '$test_id', '$test_name', '$test_time')";
             $this->conn->exec($sql);
         }
         catch (PDOException $e){
             return "Error" . $e->getMessage();
         }
         return 1;
-    }*/
+    }
+
+    public function updateTest($test_id , $test_name , $test_time){
+        try{
+            $sql =  "UPDATE Tests SET name = '$test_name', time = $test_time where test_id = '$test_id'";
+            $this->conn->exec($sql);
+        }
+        catch (PDOException $e){
+            return "Error" . $e->getMessage();
+        }
+        return 1;
+    }
 
     public function insertQuestion($table , $html){
         try{
@@ -111,25 +151,11 @@ class Controller
         return 1;
     }
 
-    public function selectTableQuestion($table){
-        try {
-            $sql = $this->conn->prepare("SELECT * FROM $table");
-            $sql->execute();
-            $questions = $sql->fetchAll(PDO::FETCH_CLASS, "TestClass");
-        }
-        catch (PDOException $e){
-
-            return "Error" . $e->getMessage();
-        }
-
-        return $questions;
-    }
-
     public function selectTests($teacher_id){
         try {
             $sql = $this->conn->prepare("SELECT * FROM Tests where ucitel_id = $teacher_id");
             $sql->execute();
-            $tests = $sql->fetchAll();
+            $tests = $sql->fetchAll(PDO::FETCH_CLASS , "TestClass");
         }
         catch (PDOException $e){
 
@@ -137,6 +163,20 @@ class Controller
         }
 
         return $tests;
+    }
+
+    public function deleteTests($teacher_id){
+        try {
+            $sql = $this->conn->prepare("DELETE FROM Tests where name = '' && ucitel_id = $teacher_id");
+            $sql->execute();
+            //$tests = $sql->fetchAll(PDO::FETCH_CLASS , "TestClass");
+        }
+        catch (PDOException $e){
+
+            return "Error" . $e->getMessage();
+        }
+
+        return 1;
     }
 
 }

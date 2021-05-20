@@ -37,17 +37,27 @@
 </html>
 
 <?php
+require_once "../vytvaranie_testov/Controller.php";
+session_start();
+$controller = new Controller();
     if(!empty($_POST['kluc']) && !empty($_POST['meno_student']) && !empty($_POST['priezvisko_student'])
         && !empty($_POST['id_student']))
     {
-        if (isset($_POST['meno_student'])) {
-            session_start();
+        $result =  $controller->selectTable($_POST['kluc']);
+        if ($result != "Error" && $result != false) {
+
             $_SESSION['meno_student'] = $_POST['meno_student'];
             $_SESSION['priezvisko_student'] = $_POST['priezvisko_student'];
             $_SESSION['kluc'] = $_POST['kluc'];
             $_SESSION['id_student'] = $_POST['id_student'];
+            header("Location: ../pohlad_student/index.php");
         }
-        header("Location: ../pohlad_student/index.php");
+        else { ?>
+            <script>
+                alert("Kod testu je nespravny!");
+            </script>
+        <?php }
+
     }
 ?>
 

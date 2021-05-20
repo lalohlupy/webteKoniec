@@ -1,0 +1,96 @@
+Index: js/checkboxy.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var countM = 0;\r\nvar checkbox_idm;\r\nvar label_idm;\r\nvar delete_idm;\r\n\r\nfunction show_hide(){\r\n    if (document.getElementById(\"multipleAnswersC\").checked) {\r\n        document.getElementById(\"maC\").style.display = \"block\";\r\n        document.getElementById(\"maC\").style.display = \"block\";\r\n    } else {\r\n        document.getElementById(\"maC\").style.display = \"none\";\r\n        document.getElementById(\"maC\").innerHTML = \"\";\r\n        countM = 0;\r\n    }\r\n}\r\n\r\nfunction newCheckbox() {\r\n    var maC = document.getElementById(\"maC\");\r\n    var maC = document.getElementById(\"maC\");\r\n    var checkbox = document.createElement('input');\r\n    var label = document.createElement('label');\r\n    var text =  document.getElementById(\"odpovedm\").value;\r\n    var btn_deletem = document.createElement(\"BUTTON\");\r\n\r\n    checkbox.type = \"checkbox\";\r\n    checkbox_idm = \"namem\" + countM;\r\n    checkbox.id = checkbox_idm;\r\n\r\n\r\n    label.htmlFor = checkbox_idm;\r\n    label_idm = \"labelm\" + countM;\r\n    label.id = label_idm;\r\n    label.appendChild(document.createTextNode(text));\r\n\r\n    btn_deletem.textContent = \"Delete\";\r\n    delete_idm = \"delete_checkbox\" + countM;\r\n    btn_deletem.id = delete_idm;\r\n    btn_deletem.onclick = deleteCheckbox(this.checkbox_idm, this.label_idm, this.delete_idm);\r\n\r\n    maC.appendChild(checkbox);\r\n    maC.appendChild(label);\r\n    maC.appendChild(btn_deletem);\r\n    countM++;\r\n}\r\nfunction newButton(){\r\n    if(!document.getElementById(\"pridaj_checkbox\")) {\r\n        var btn = document.createElement(\"BUTTON\");\r\n        var text_pole = document.createElement('input');\r\n\r\n        btn.textContent = \"Pridat checkbox\";\r\n        btn.id = \"pridaj_checkbox\";\r\n        btn.onclick = newCheckbox;\r\n\r\n        text_pole.type = \"text\";\r\n        text_pole.id = \"odpovedm\";\r\n\r\n        maC.appendChild(btn);\r\n        maC.appendChild(text_pole);\r\n    }\r\n}\r\nfunction deleteCheckbox(checkbox, label, delete_id){\r\n   //  alert(\"ide\");\r\n   // document.getElementById(checkbox).remove();\r\n   // document.getElementById(label).remove();\r\n   // document.getElementById(delete_id).remove();\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/checkboxy.js b/js/checkboxy.js
+--- a/js/checkboxy.js	(revision ff9bded60b2f190983d58ccd3c5ef4f0955c5e08)
++++ b/js/checkboxy.js	(date 1621007294176)
+@@ -35,7 +35,8 @@
+     btn_deletem.textContent = "Delete";
+     delete_idm = "delete_checkbox" + countM;
+     btn_deletem.id = delete_idm;
+-    btn_deletem.onclick = deleteCheckbox(this.checkbox_idm, this.label_idm, this.delete_idm);
++    btn_deletem.setAttribute("onclick" , "deleteCheckbox()");
++
+ 
+     maC.appendChild(checkbox);
+     maC.appendChild(label);
+@@ -58,10 +59,11 @@
+         maC.appendChild(text_pole);
+     }
+ }
+-function deleteCheckbox(checkbox, label, delete_id){
+-   //  alert("ide");
+-   // document.getElementById(checkbox).remove();
++function deleteCheckbox(){
++    // alert("id222e");
++   //  document.getElementById(checkbox).remove();
+    // document.getElementById(label).remove();
+    // document.getElementById(delete_id).remove();
++
+ }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"1.2.0\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/deployment.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/deployment.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/js/checkboxy.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/js/checkboxy.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/vytvaranie_testov/index_cernan.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/vytvaranie_testov/index_cernan.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"origin/master\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1sOPiqLvWb6L6OcK8MA2gxc1Psg\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../zadanie2/classes/PersonController.php\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Acer\\PhpstormProjects\\webteKoniec\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\vytvaranie_testov\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\uvodna_stranka\" />\r\n      <recent name=\"D:\\Projekty\\Webove_technologie_2\\webteKoniec\\prihlasenie\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4607790d-2c21-4b11-b41c-26b326da3ad1\" name=\"Default Changelist\" comment=\"1.2.0\" />\r\n      <created>1620740793206</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1620740793206</updated>\r\n      <workItem from=\"1620740795271\" duration=\"3371000\" />\r\n      <workItem from=\"1620818402382\" duration=\"7837000\" />\r\n      <workItem from=\"1620829729797\" duration=\"10824000\" />\r\n      <workItem from=\"1620897035993\" duration=\"1819000\" />\r\n      <workItem from=\"1620984005427\" duration=\"8289000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"boaaa\">\r\n      <created>1620741079790</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620741079790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"login system\">\r\n      <created>1620848712774</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620848712774</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"login system\">\r\n      <created>1620898785822</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898785822</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"login system\">\r\n      <created>1620898903736</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898903736</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"login system\">\r\n      <created>1620898971554</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620898971554</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"cernan\">\r\n      <created>1620899443507</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899443507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"cernan2\">\r\n      <created>1620899512170</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620899512170</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"1.1.6\">\r\n      <created>1620919128594</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620919128594</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"1.2.0\">\r\n      <created>1620935110462</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1620935110462</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"boaaa\" />\r\n    <MESSAGE value=\"login system\" />\r\n    <MESSAGE value=\"cernan\" />\r\n    <MESSAGE value=\"cernan2\" />\r\n    <MESSAGE value=\"1.1.6\" />\r\n    <MESSAGE value=\"1.2.0\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"1.2.0\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ff9bded60b2f190983d58ccd3c5ef4f0955c5e08)
++++ b/.idea/workspace.xml	(date 1621181101872)
+@@ -1,15 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="1.2.0">
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__5__2021_15_49__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12__5__2021_18_38__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13__5__2021_11_44__Default_Changelist_.xml" afterDir="false" />
++    <list default="true" id="4607790d-2c21-4b11-b41c-26b326da3ad1" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/js/checkboxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/checkboxy.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" beforeDir="false" afterPath="$PROJECT_DIR$/vytvaranie_testov/index_cernan.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -83,6 +77,7 @@
+       <workItem from="1620829729797" duration="10824000" />
+       <workItem from="1620897035993" duration="1819000" />
+       <workItem from="1620984005427" duration="8289000" />
++      <workItem from="1621166239296" duration="2489000" />
+     </task>
+     <task id="LOCAL-00001" summary="boaaa">
+       <created>1620741079790</created>
+@@ -147,7 +142,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1620935110462</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="spraveny delete">
++      <created>1621004451394</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1621004451394</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -172,6 +174,7 @@
+     <MESSAGE value="cernan2" />
+     <MESSAGE value="1.1.6" />
+     <MESSAGE value="1.2.0" />
+-    <option name="LAST_COMMIT_MESSAGE" value="1.2.0" />
++    <MESSAGE value="spraveny delete" />
++    <option name="LAST_COMMIT_MESSAGE" value="spraveny delete" />
+   </component>
+ </project>
+\ No newline at end of file

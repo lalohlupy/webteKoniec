@@ -4,7 +4,11 @@
 class TestClass
 {
     private int $id;
-    private string $test_code;
+    private int $ucitel_id;
+    private string $test_id;
+    private string $date;
+    private string $name;
+    private int $time;
 
     /**
      * @return int
@@ -23,19 +27,84 @@ class TestClass
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getTestCode(): string
+    public function getUcitelId(): int
     {
-        return $this->test_code;
+        return $this->ucitel_id;
     }
 
     /**
-     * @param string $test_code
+     * @param int $ucitel_id
      */
-    public function setTestCode(string $test_code): void
+    public function setUcitelId(int $ucitel_id): void
     {
-        $this->test_code = $test_code;
+        $this->ucitel_id = $ucitel_id;
     }
+
+    /**
+     * @return string
+     */
+    public function getTestId(): string
+    {
+        return $this->test_id;
+    }
+
+    /**
+     * @param string $test_id
+     */
+    public function setTestId(string $test_id): void
+    {
+        $this->test_id = $test_id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDate(): string
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param string $date
+     */
+    public function setDate(string $date): void
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTime(): int
+    {
+        return $this->time;
+    }
+
+    /**
+     * @param int $time
+     */
+    public function setTime(int $time): void
+    {
+        $this->time = $time;
+    }
+
 
 }

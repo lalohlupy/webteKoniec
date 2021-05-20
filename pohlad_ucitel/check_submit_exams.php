@@ -1,6 +1,13 @@
 <?php
     require_once "../vytvaranie_testov/Controller.php";
     session_start();
+    $controller = new Controller();
+    if(!isset($_SESSION['meno_ucitelp'])){
+        header("Location: ../uvodna_stranka/index.php");
+    }
+
+    $result = $controller->deleteTests($_SESSION['meno_ucitelp']);
+    $test = $controller->selectTests($_SESSION['meno_ucitelp']);
 
 ?>
 
@@ -12,6 +19,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Úprava testov</title>
 </head>
 <body>
@@ -38,15 +46,13 @@
             </ul>
             <div>
                 <span style="color: darkorange">LOGGED IN AS: <?php
-                    if (isset($_SESSION['meno_ucitelp'])) {
                         echo $_SESSION['meno_ucitelp'];
-                    }
                     ?></span>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue"><b>Log Out<?php session_unset()?></b></a>
+                        <a href="../uvodna_stranka/index.php" class="nav-link" style="color: dodgerblue" onclick=""><b>Log Out</b></a>
                     </li>
                 </ul>
             </div>
@@ -61,27 +67,21 @@
             <tr>
                 <th>ID testu</th>
                 <th>datum vytvorenia</th>
-                <!--<th>datum otvorenia</th>
-                <th>datum uzavretia</th>-->
                 <th>nazov testu</th>
                 <th>cas na splnenie</th>
             </tr>
             <tbody>
-            <?php foreach($people as $person):?>
-                <?php $placements = $person->getPlacements(); ?>
-                <?php foreach($placements as $placement):
-                    $ohId = $placement->getOhId();
-                    $oh = $personController->getOlympicGame($ohId);
-                    ?>
-                    <tr>
-                        <td><?=$person->getName();?></td>
-                        <td><?=$person->getSurname();?></td>
-                        <td><?=$oh->getYear() ?></td>
-                        <td><?=$placement->getCity();?></td>
-                        <td><?=$oh->getTypeString();?></td>
-                        <td><?=$placement->getDiscipline();?></td>
-                    </tr>
-                <?php endforeach;?>
+            <?php
+            //var_dump($test);
+            ?>
+            <?php foreach($test as $tests):?>
+                <tr>
+                    <td><?= $tests->getTestId() ?></td>
+                    <td><?= $tests->getDate();?></td>
+                    <td><?= $tests->getName();?></td>
+                    <td><?= $tests->getTime();?></td>
+                </tr>
+
             <?php endforeach;?>
             </tbody>
         </table>
