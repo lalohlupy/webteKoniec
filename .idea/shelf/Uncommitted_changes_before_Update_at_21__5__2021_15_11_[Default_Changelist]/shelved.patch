@@ -1,0 +1,19 @@
+Index: pohlad_student/answerUpload.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n$target_dir = \"../images/\";\r\n$target_file = $target_dir . basename($_FILES[\"fileToUpload\"][\"name\"]);\r\ninclude '../vytvaranie_testov/Database.php';\r\n\r\nvar_dump($_FILES);\r\n//\r\nvar_dump($_POST);\r\nvar_dump($target_file);\r\n\r\n//check if already submitted\r\n$sql = \"SELECT * FROM finished_tests WHERE ais_id = ? AND test_key = ?\";\r\n$stmt = (new Database())->getConnection()->prepare($sql);\r\n$stmt->execute([(int) $_POST['userId'], $_POST['testKey']]);\r\n$already_finished = $stmt->fetchAll(PDO::FETCH_ASSOC);\r\n\r\n//if not then submit\r\nif (empty($already_finished)) {\r\n    $conn = (new Database())->getConnection();\r\n    $sql = \"INSERT INTO finished_tests (test_key, ais_id) VALUES (?, ?)\";\r\n    $stmt = $conn->prepare($sql);\r\n    $stmt->execute([$_POST['testKey'], (int) $_POST['userId']]);\r\n}\r\n\r\n//\r\n//\r\n////$nameArray = explode(\".\", $_FILES[\"fileToUpload\"][\"name\"]);\r\n//$ext = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));\r\n////$timeStamp = time();\r\n//\r\n//$fileName =  basename($_FILES[\"fileToUpload\"][\"name\"], \".$ext\");        // tento file je work in progress\r\n//\r\n//var_dump($_POST);\r\n//\r\n//if($_POST['filename'] == null) {\r\n//    $fileName = $fileName . \"_\" .  \".\" . $ext;\r\n//\r\n//}\r\n//else{\r\n//    $fileName = $_POST[\"filename\"].\"_\".\".\".$ext;\r\n//    //echo \" \".$fileName.\" \";\r\n//}\r\n//\r\n//if (file_exists($target_file)) { // Check if file already exists\r\n//    //$fileName = \"file\".\"_\".$timeStamp.\".\".$ext;\r\n//    echo \" \".$fileName.\" \";\r\n//}\r\n//\r\n//if (move_uploaded_file($_FILES[\"fileToUpload\"][\"tmp_name\"], $target_dir.$fileName)) {\r\n//    echo \"The file \". htmlspecialchars($fileName). \" has been uploaded.\";\r\n//} else {\r\n//    echo \"Sorry, there was an error uploading your file.\";\r\n//}\r\n\r\n?>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pohlad_student/answerUpload.php b/pohlad_student/answerUpload.php
+--- a/pohlad_student/answerUpload.php	(revision 5a0823f004cbaf89a759e9535a5c3392b6ecb8e8)
++++ b/pohlad_student/answerUpload.php	(date 1621602642882)
+@@ -22,7 +22,7 @@
+     $stmt->execute([$_POST['testKey'], (int) $_POST['userId']]);
+ }
+ 
+-//
++// pes
+ //
+ ////$nameArray = explode(".", $_FILES["fileToUpload"]["name"]);
+ //$ext = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
