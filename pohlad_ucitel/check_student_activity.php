@@ -62,11 +62,11 @@ if (!isset($_SESSION['meno_ucitelp'])) {
     </div>
 </nav>
 <div class="container" style="margin-top: 15vh;"> <!--table-->
-    <h1>Aktivita studentov(kto skoncil test/ kto nie)...</h1>
+    <h1 class="text-center">Aktivita študentov(kto skončil test):</h1>
     <div>
-        <table class="table">
+        <table class="table table table-striped">
             <thead>
-            <tr>
+            <tr class="table-info">
                 <th scope="col">Id studenta</th>
                 <th scope="col">Meno studenta</th>
                 <th scope="col">Priezvisko</th>
@@ -77,10 +77,11 @@ if (!isset($_SESSION['meno_ucitelp'])) {
             </tbody>
         </table>
     </div>
+    <h1 class="text-center">Kto opustil tab + koľko krát:</h1>
     <div>
-        <table class="table">
+        <table class="table table table-striped">
             <thead>
-            <tr>
+            <tr class="table-danger">
                 <th scope="col">Id studenta</th>
                 <th scope="col">Meno studenta</th>
                 <th scope="col">Priezvisko</th>

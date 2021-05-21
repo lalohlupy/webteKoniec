@@ -59,7 +59,6 @@ if(!isset($_SESSION['id_student'])) {
                         <li><span class="dropdown-item">Boris Gašparovič</span></li>
                         <li><span class="dropdown-item">Peter Čerňan</span></li>
                         <li><span class="dropdown-item">Martin Varga</span></li>
-                        <li><span class="dropdown-item">Tomáš Kaňka</span></li>
                     </ul>
                 </li>
             </ul>
