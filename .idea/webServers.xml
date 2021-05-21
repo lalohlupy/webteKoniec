@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="59d2c91c-e46a-4b78-a0af-8e0cb2a7797e" name="WEBTECH2" url="http://wt160.fei.stuba.sk">
+        <fileTransfer rootFolder="/home/xvargam5/public_html" accessType="SFTP" host="wt160.fei.stuba.sk" port="22" sshConfigId="6207f292-924c-4a49-b003-b687f895f907" sshConfig="xvargam5@wt160.fei.stuba.sk:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

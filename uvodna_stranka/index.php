@@ -29,11 +29,12 @@ session_unset();
                 <h1>Prihlásiť sa ako: </h1>
                 <a class="fadeIn first" id="student" href="student.php" style="color: dodgerblue;text-decoration: none;font-weight: 400; font-size: 150%; display: flex;flex-direction: column;align-items:center; "><b>Študent</b></a>
                 <a class="fadeIn second" id="ucitel" href="ucitel.php" style="color: dodgerblue;text-decoration: none;font-weight: 400; font-size: 150%; display: flex; flex-direction: column;align-items:center; "><b>Učiteľ</b></a>
+                <a class="fadeIn third" id="dokumentacia" href="dokumentacia.php" style="color: dodgerblue;text-decoration: none;font-weight: 400; font-size: 150%; display: flex; flex-direction: column;align-items:center; "><b>Dokumentácia</b></a>
             </div>
         </div>
     </div>
 </body>
-<!--ajsda-->
+
 
 
 

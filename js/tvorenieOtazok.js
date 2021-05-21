@@ -1,5 +1,6 @@
 
 var index = 1;
+var count_input = 1;
 
 function myFunction() {
     deleteButtonsDelete();
@@ -48,6 +49,9 @@ function myFunction() {
             textnode = document.createTextNode(text);
             var input = document.createElement("INPUT");
             input.setAttribute("type", "file");
+            alert(count_input);
+            input.id = "filetoupload" + count_input;
+            input.name = "filetoupload" + count_input;
             input.setAttribute("accept", "image/png, image/gif, image/jpeg");
             var image = document.createElement("img");
             image.setAttribute("id" , "image"+index);
@@ -57,6 +61,7 @@ function myFunction() {
             node.appendChild(textnode);
             node.appendChild(image);
             node.appendChild(input);
+            count_input++;
         }
         else {
             text = "- vlozenie matematickeho vzorca";
@@ -82,7 +87,7 @@ function myFunction() {
                 json : jsonObject
             },
             success: function (data){
-                //alert(data);
+                // alert(data);
             },
             error: function (xhr ,request , error){
                 console.log(arguments);
