@@ -1,0 +1,106 @@
+Index: js/tvorenieOtazok.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nvar index = 1;\r\n\r\nfunction myFunction() {\r\n    deleteButtonsDelete();\r\n    var questionId = \"questionC\";\r\n    var divId = \"divC\"+index;\r\n    var divNode = document.createElement(\"DIV\");\r\n    divNode.setAttribute(\"id\" , divId);\r\n    document.getElementById(\"testListC\").appendChild(divNode);\r\n\r\n    if(document.getElementById(divId) != null){\r\n        var node = document.createElement(\"LI\");                //pridaj list\r\n        node.setAttribute(\"id\" , questionId+index);\r\n\r\n        var text = document.getElementById(\"questNameC\").value;      //pridaj nazov\r\n        var textnode = document.createTextNode(text);\r\n        node.appendChild(textnode);\r\n\r\n\r\n        var check1 = document.getElementById(\"multipleAnswersC\").checked;\r\n        var check2 = document.getElementById(\"shortAnswerC\").checked;\r\n        var check3 = document.getElementById(\"pairAnswersC\").checked;\r\n        var check4 = document.getElementById(\"imageAnswersC\").checked;\r\n        if(check1 == true){\r\n            var temp = $(\"#maC\").html();\r\n            //alert(temp);\r\n            text = \"- vyber z moznosti\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n            document.getElementById(\"maC\").innerHTML = \"\";\r\n        }\r\n        else if(check2 == true){\r\n            var textarea = document.createElement(\"textarea\");\r\n            text = \"- kratka slovna odpoved\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        else if(check3 == true){\r\n            text = \"- parovanie otazok\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        else if (check4 == true){\r\n            text = \"- vlozenie obrazka\";\r\n            textnode = document.createTextNode(text);\r\n            var input = document.createElement(\"INPUT\");\r\n            input.setAttribute(\"type\", \"file\");\r\n            input.setAttribute(\"accept\", \"image/png, image/gif, image/jpeg\");\r\n            var image = document.createElement(\"img\");\r\n            image.setAttribute(\"id\" , \"image\"+index);\r\n            input.setAttribute(\"onchange\" , \"loadFile(event)\");\r\n            input.setAttribute(\"disabled\" , \"true\");\r\n            node.appendChild(textnode);\r\n            node.appendChild(image);\r\n            node.appendChild(input);\r\n        }\r\n        else {\r\n            text = \"- vlozenie matematickeho vzorca\";\r\n            textnode = document.createTextNode(text);\r\n            node.appendChild(textnode);\r\n        }\r\n        index++;\r\n\r\n        //alert(divId);\r\n        tempId = \"#\"+divId;\r\n        $(tempId).append(node);\r\n        $(tempId).append(temp);\r\n        //document.getElementById(divId).appendChild(node);\r\n        if(check2 == true) {document.getElementById(divId).appendChild(textarea);}\r\n\r\n\r\n        var jsonObject = $(tempId).html();\r\n        $.ajax({\r\n            type : 'POST',\r\n            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',\r\n            dataType : 'text',\r\n            data : {\r\n                json : jsonObject\r\n            },\r\n            success: function (data){\r\n                //alert(data);\r\n            },\r\n            error: function (xhr ,request , error){\r\n                console.log(arguments);\r\n                var err = eval(\"(\" + xhr.responseText + \")\");\r\n                alert(err.Message);\r\n            }\r\n\r\n        });\r\n    }\r\n}\r\n\r\nvar loadFile = function(event) {\r\n    var image = document.getElementById(\"image\"+index);\r\n    image.style.width = \"300px\";\r\n    image.src = URL.createObjectURL(event.target.files[0]);\r\n};\r\n\r\n\r\nfunction myFunction2(){\r\n    var nameC = document.getElementById(\"testNameC\").value;\r\n    var timeC = document.getElementById(\"testTimeC\").value;\r\n    var lengthC = index-1;\r\n    if(nameC == \"\"){\r\n        alert(\"Nazov testu nie je zadany!\");\r\n    }\r\n    else if(timeC == \"\"){\r\n        alert(\"Cas na vypracovanie testu nie je zadany!\");\r\n    }\r\n    else if(lengthC == 0){\r\n        alert(\"Test neobsahuje ziadne otazky!\");\r\n    }\r\n    else{\r\n        $.ajax({\r\n            type : 'POST',\r\n            url : 'https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php',\r\n            //dataType : 'text',\r\n            //contentType : 'text/plain',\r\n            data : {\r\n                length : lengthC,\r\n                name : nameC,\r\n                time : timeC\r\n            },\r\n            success: function (data){\r\n                //alert(data);\r\n            },\r\n            error: function (xhr ,request , error){\r\n                console.log(arguments);\r\n                var err = eval(\"(\" + xhr.responseText + \")\");\r\n                alert(err.Message);\r\n            }\r\n        });\r\n        window.location.replace(\"https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php\");\r\n    }\r\n\r\n    //window.location.replace(\"https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php\");\r\n\r\n}\r\n/*\r\n$(\"#btn2\").click(function(){\r\n    var jsonObject = $(\"#testListC\").html();\r\n\r\n    $.ajax({\r\n        type : \"POST\",\r\n        url : \"pridavanie_otazok.php\",\r\n        dataType : 'text',\r\n        data : {\r\n        json : jsonObject\r\n        },\r\n        success: function (data){\r\n            alert(data);\r\n        },\r\n        error: function (xhr ,request , error){\r\n            console.log(arguments);\r\n            var err = eval(\"(\" + xhr.responseText + \")\");\r\n            alert(err.Message);\r\n        }\r\n\r\n    });\r\n});*/\r\n\r\nfunction deleteButtonsDelete(){\r\n    if (document.getElementById(\"multipleAnswersC\").checked){\r\n        for(var i = 0; i < pole_deleteidm.length; i++) {\r\n                document.getElementById(pole_deleteidm[i]).remove();\r\n        }\r\n        pole_deleteidm = [];\r\n    }\r\n}\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/tvorenieOtazok.js b/js/tvorenieOtazok.js
+--- a/js/tvorenieOtazok.js	(revision ca7f977db9c989998ebaf791387001bb002562a4)
++++ b/js/tvorenieOtazok.js	(date 1621442031192)
+@@ -49,6 +49,7 @@
+             input.setAttribute("accept", "image/png, image/gif, image/jpeg");
+             var image = document.createElement("img");
+             image.setAttribute("id" , "image"+index);
++            input.setAttribute("class" , "image");
+             input.setAttribute("onchange" , "loadFile(event)");
+             input.setAttribute("disabled" , "true");
+             node.appendChild(textnode);
+@@ -131,7 +132,7 @@
+                 alert(err.Message);
+             }
+         });
+-        window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
++        //window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/pohlad_ucitel/check_submit_exams.php");
+     }
+ 
+     //window.location.replace("https://wt33.fei.stuba.sk/webteKoniec/vytvaranie_testov/test.php");
+Index: pohlad_student/index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\nrequire \"../vytvaranie_testov/Controller.php\";\r\n\r\nsession_start();\r\n$controller = new Controller();\r\n\r\nif(!isset($_SESSION['id_student'])) {\r\n    header(\"Location: ../uvodna_stranka/index.php\");\r\n}\r\n\r\n$questions = $controller->selectTableQuestion($_SESSION['kluc']);\r\n$table = $controller->selectTable($_SESSION['kluc']);\r\n\r\n$_SESSION['time'] = $table['time'];\r\n\r\n?>\r\n\r\n<script rel=\"script\" src=\"../js/jquery-3.6.0.min.js\"></script>\r\n\r\n<!doctype html>\r\n<html lang=\"sk\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x\" crossorigin=\"anonymous\">\r\n    <title>Testy</title>\r\n</head>\r\n<body onload=\"timer()\">\r\n    <nav class=\"navbar  fixed-top navbar-expand-sm navbar-dark bg-dark\">\r\n        <div class=\"container\">\r\n        <a href=\"#\" class=\"navbar-brand mb-0 h1\">Navbar</a>\r\n        <button type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" class=\"navbar-toggler\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n            <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item active\">\r\n                        <a href=\"#\" class=\"nav-link active\">Show Exam</a>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <a href=\"formula_sheets.php\" class=\"nav-link\">Formula Sheets</a>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <a href=\"drawing_tool.php\" class=\"nav-link\">Drawing Tool</a>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <a href=\"scan_work.php\" class=\"nav-link\">Scan work</a>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <span class=\"nav-link\">Time Left: <div id=\"timerDiv\"></div> </span>\r\n                    </li>\r\n                    <li class=\"nav-item dropdown\">\r\n                        <span class=\"nav-link dropdown-toggle\" id=\"navbarDropDown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Team</span>\r\n                        <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropDown\">\r\n                            <li><span class=\"dropdown-item\">Boris Gašparovič</span></li>\r\n                            <li><span class=\"dropdown-item\">Peter Čerňan</span></li>\r\n                            <li><span class=\"dropdown-item\">Martin Varga</span></li>\r\n                            <li><span class=\"dropdown-item\">Tomáš Kaňka</span></li>\r\n                        </ul>\r\n                    </li>\r\n                </ul>\r\n                <div>\r\n                    <span style=\"color: darkorange\">LOGGED IN AS: <?php\r\n                        if (isset($_SESSION['meno_student'])) {\r\n                            echo $_SESSION['meno_student'];\r\n                            echo \" \".$_SESSION['priezvisko_student'];\r\n                        }\r\n                        ?></span>\r\n                </div>\r\n                <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n                    <ul class=\"navbar-nav\">\r\n                        <li class=\"nav-item\">\r\n                            <a href=\"../uvodna_stranka/index.php\" class=\"nav-link\" style=\"color: dodgerblue\" onclick=\"\"><b>Log Out</b></a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div id=\"prehladTestov\" class=\"border border-primary border-2 rounded-3 w-75\" style=\"margin-top: 10vh; margin-left: 13%; padding: 30px\">\r\n        <div class=\"container \">\r\n            <form class=\"align-items-center\" >\r\n                <div style=\"margin-left: 30%\">\r\n                    <div id=\"testQuestions\">\r\n                        <p>test:</p>\r\n                        <?php\r\n                        foreach ($questions as $question){\r\n                            echo $question->getTestCode();\r\n                        }\r\n                        ?>\r\n                    </div>\r\n                </div>\r\n                <div class=\"text-center\" style=\"padding: 25px\">\r\n                    <button type=\"submit\" class=\"btn btn-primary \">Submit Your Exam</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>\r\n</body>\r\n</html>\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pohlad_student/index.php b/pohlad_student/index.php
+--- a/pohlad_student/index.php	(revision ca7f977db9c989998ebaf791387001bb002562a4)
++++ b/pohlad_student/index.php	(date 1621442300933)
+@@ -23,9 +23,10 @@
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
++    <script rel="script" src="../js/otazkyStudent.js"></script>
+     <title>Testy</title>
+ </head>
+-<body onload="timer()">
++<body >
+     <nav class="navbar  fixed-top navbar-expand-sm navbar-dark bg-dark">
+         <div class="container">
+         <a href="#" class="navbar-brand mb-0 h1">Navbar</a>
+@@ -81,7 +82,7 @@
+         <div class="container ">
+             <form class="align-items-center" >
+                 <div style="margin-left: 30%">
+-                    <div id="testQuestions">
++                    <div id="testQuestions" ">
+                         <p>test:</p>
+                         <?php
+                         foreach ($questions as $question){
+@@ -97,6 +98,9 @@
+         </div>
+     </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
++<script>
++    enableInput();
++</script>
+ </body>
+ </html>
+ 
+Index: vytvaranie_testov/test.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\nrequire_once \"Controller.php\";\r\nsession_start();\r\n$controller = new Controller();\r\n\r\nif(isset($_POST['json'])){\r\n    $controller->insertQuestion($_SESSION['test_id'] ,$_POST['json'] );\r\n    $_POST = array();\r\n}\r\nvar_dump($_POST);\r\nif(isset($_POST['length'])){\r\n    $controller->createOtherTable($_SESSION['test_id'] ,$_POST['length']);\r\n    $controller->updateTest($_SESSION['test_id'] , $_POST['name'] , $_POST['time'] );\r\n    $_POST = array();\r\n    //header(\"Location: ../pohlad_ucitel/check_submit_exams.php\");\r\n}\r\n\r\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/vytvaranie_testov/test.php b/vytvaranie_testov/test.php
+--- a/vytvaranie_testov/test.php	(revision ca7f977db9c989998ebaf791387001bb002562a4)
++++ b/vytvaranie_testov/test.php	(date 1621441999819)
+@@ -12,7 +12,7 @@
+     $controller->createOtherTable($_SESSION['test_id'] ,$_POST['length']);
+     $controller->updateTest($_SESSION['test_id'] , $_POST['name'] , $_POST['time'] );
+     $_POST = array();
+-    //header("Location: ../pohlad_ucitel/check_submit_exams.php");
++    header("Location: ../pohlad_ucitel/check_submit_exams.php");
+ }
+ 
+ ?>
+\ No newline at end of file
+Index: js/otazkyStudent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/otazkyStudent.js b/js/otazkyStudent.js
+new file mode 100644
+--- /dev/null	(date 1621442493454)
++++ b/js/otazkyStudent.js	(date 1621442493454)
+@@ -0,0 +1,7 @@
++
++
++function enableInput(){
++    alert("1");
++    var images = document.getElementById("testQuestions").querySelectorAll(".image");
++    images[0].removeAttribute("disabled");
++}
+\ No newline at end of file
