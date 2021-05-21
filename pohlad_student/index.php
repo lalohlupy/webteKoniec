@@ -16,6 +16,7 @@ $_SESSION['time'] = $table['time'];
 ?>
 
 
+
 <!doctype html>
 <html lang="sk">
 <head>
@@ -121,6 +122,18 @@ $_SESSION['time'] = $table['time'];
                 <button type="submit" class="btn btn-primary ">Submit Your Exam</button>
             </div>
         </form>
+        <?php
+            $j = 1;
+           while(1){
+                   if(!empty($_FILES["filetoupload" . $j])) {
+                       move_uploaded_file($_FILES["filetoupload" . $j]["tmp_name"], "../../images/" . $_FILES["filetoupload" . $j]["name"]);
+                       $j++;
+                   }
+                   else{
+                       return;
+                   }
+               }
+            ?>
     </div>
 </div>
 <script>

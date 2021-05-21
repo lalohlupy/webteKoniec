@@ -16,7 +16,7 @@ if(!isset($_SESSION['meno_ucitelp'])){
     <title>Úprava testov</title>
 </head>
 <body>
-<nav class="navbar  fixed-top navbar-expand-sm navbar-dark" style="background-color: darkred;">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color: darkred;">
     <div class="container">
         <a href="#" class="navbar-brand mb-0 h1">Navbar</a><!--NAVBAR-->
         <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
