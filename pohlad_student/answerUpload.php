@@ -15,15 +15,14 @@ if($_POST['filename'] == null) {
 //    check if already submitted
     $sql = "SELECT * FROM finished_tests WHERE ais_id = ? AND test_key = ?";
     $stmt = (new Database())->getConnection()->prepare($sql);
-    $stmt->execute([(int) $_POST['userId'], $_POST['testKey']]);
     $already_finished = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //    if not then submit
     if (empty($already_finished)) {
         $conn = (new Database())->getConnection();
-        $sql = "INSERT INTO finished_tests (test_key, ais_id) VALUES (?, ?)";
+        $sql = "INSERT INTO finished_tests (test_key, ais_id, forename, surname) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$_POST['testKey'], (int) $_POST['userId']]);
+        $stmt->execute([$_POST['testKey'], (int) $_POST['userId'], $_POST['forename'], $_POST['surname']]);
     }
 }
 else{
