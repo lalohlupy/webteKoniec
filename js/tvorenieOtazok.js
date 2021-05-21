@@ -32,6 +32,8 @@ function myFunction() {
         }
         else if(check2 == true){
             var textarea = document.createElement("textarea");
+            //textarea.class = "text";
+            textarea.setAttribute("class" , "text");
             text = "- kratka slovna odpoved";
             textnode = document.createTextNode(text);
             node.appendChild(textnode);
@@ -49,7 +51,7 @@ function myFunction() {
             input.setAttribute("accept", "image/png, image/gif, image/jpeg");
             var image = document.createElement("img");
             image.setAttribute("id" , "image"+index);
-            input.setAttribute("onchange" , "loadFile(event)");
+            input.setAttribute("onchange" , "loadFile(event , id)");
             input.setAttribute("disabled" , "true");
             input.setAttribute("class" , "image");
             node.appendChild(textnode);
@@ -92,7 +94,7 @@ function myFunction() {
     }
 }
 
-var loadFile = function(event) {
+var loadFile = function(event , id) {
     var image = document.getElementById("image"+index);
     image.style.width = "300px";
     image.src = URL.createObjectURL(event.target.files[0]);

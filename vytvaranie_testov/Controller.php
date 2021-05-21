@@ -31,7 +31,7 @@ class Controller
     public function createOtherTable($myRandomString, $length){
         $phpString = "";
         for($i = 0; $i < $length; $i++ ){
-            $phpString = $phpString.", "."q".$i." VARCHAR(32)";
+            $phpString = $phpString.", "."q".$i." VARCHAR(1024)";
         }
         $myRandomString = $myRandomString."_A";
         try {

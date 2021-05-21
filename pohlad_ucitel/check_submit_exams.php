@@ -60,7 +60,7 @@
     </div>
 </nav>
 <div class="container" style="margin-top: 15vh;">
-    <h1>Pozriet si odovzdane testy...</h1>
+
     <div id="testContainerC">
         <h2>Vytvorene testy :</h2>
         <table>

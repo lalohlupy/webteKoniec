@@ -27,6 +27,7 @@ function newCheckbox() {
     checkbox.type = "checkbox";
     checkbox_idm = "namem" + countM;
     checkbox.id = checkbox_idm;
+    checkbox.setAttribute("class" , "checkboxclass");
 
     label.htmlFor = checkbox_idm;
     label_idm = "labelm" + countM;

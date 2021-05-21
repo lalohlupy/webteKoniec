@@ -90,23 +90,28 @@ $_SESSION['time'] = $table['time'];
 
     <span id="time_database" hidden><?= $_SESSION['time']?></span>
     <div class="container ">
-        <form class="align-items-center" method="post" action="answerUpload.php">
+       <form class="align-items-center" method="post" enctype="multipart/form-data" >     <!--  action="answerUpload.php"  -->
             <input type="hidden" value="<?= $_SESSION['id_student']?>" name="userId">
             <input type="hidden" value="<?= $_SESSION['kluc']?>" name="testKey">
+<!--            <input type="file" id="fileToUpload">-->
             <div style="margin-left: 30%">
                 <div id="testQuestions" >
                     <p>test:</p>
-                    <?php
-                    foreach ($questions as $question){
-                        echo $question->getTestCode();
-                    }
-                    ?>
+                    <ol id="testList">
+                        <?php
+                        //echo count($questions);
+                        foreach ($questions as $question){
+                            echo $question->getTestCode();
+                        }
+                        ?>
+                    </ol>
                 </div>
             </div>
             <div class="text-center" style="padding: 25px">
-                <button type="submit" class="btn btn-primary ">Submit Your Exam</button>
+                <button type="submit" class="btn btn-primary" onclick="getInput()">Submit Your Exam</button>
             </div>
         </form>
+
     </div>
 </div>
 <script rel="script" src="timer.js"></script>

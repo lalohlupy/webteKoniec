@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="WEBTECH2" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="WEBTECH2">
-        <serverdata>
-          <mappings>
-            <mapping deploy="Zaverecne_zadanie" local="$PROJECT_DIR$" web="/Zaverecne_zadanie" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="cernan">
         <serverdata>
           <mappings>
-            <mapping deploy="webteKoniec" local="$PROJECT_DIR$" web="/webteKoniec" />
+            <mapping deploy="/webteKoniecCernan" local="$PROJECT_DIR$" web="/webteKoniecCernan" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="webte">
+        <serverdata>
+          <mappings>
+            <mapping deploy="webteKoniecCernan" local="$PROJECT_DIR$" web="/webteKoniecCernan" />
           </mappings>
         </serverdata>
       </paths>

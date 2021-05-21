@@ -14,6 +14,11 @@ if(!isset($_SESSION['meno_ucitelp'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script rel="script" src="../js/jquery-3.6.0.min.js"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <title>Aktivita Študentov</title>
 </head>
 <body>
@@ -53,29 +58,33 @@ if(!isset($_SESSION['meno_ucitelp'])){
         </div>
     </div>
 </nav>
-<div class="container" style="margin-top: 15vh;">
+<div class="container" style="margin-top: 15vh;"> <!--table-->
     <h1>Aktivita studentov(kto skoncil test/ kto nie)...</h1>
-    <div id="working"></div>
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id studenta:</th>
+                </tr>
+            </thead>
+            <tbody id="working">
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script>
-    const onVisibilityChange = () => {
-        if (document.visibilityState !== 'visible') {
-            console.log('I am not visible!');
-        }
-    };
-
-    document.addEventListener('visibilitychange', onVisibilityChange);
 
     let i = 0;
     const intervalCallback = () => {
         i++;
         $.get('rest.php', (data) => {
             const response = JSON.parse(data);
-            // response.forEach(data => console.log(data));
             $('#working').text(response.map(student => student.ais_id).join(', '));
         });
-
     }
 
     setInterval(intervalCallback, 1000);
